@@ -2,7 +2,7 @@ package ch03_test
 
 import "testing"
 
-// 比较数组
+// 数组比较
 func TestCompareArray(t *testing.T) {
 	a := [...]int{1, 2, 3, 5}
 	b := [...]int{1, 2, 3, 5}

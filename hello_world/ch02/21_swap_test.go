@@ -1,4 +1,4 @@
-package try_test
+package ch02_test
 
 import "testing"
 
