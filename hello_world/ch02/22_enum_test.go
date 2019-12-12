@@ -18,7 +18,7 @@ const (
 	Executable
 )
 
-//测试枚举常量，以及 bit mask 常量
+// 测试枚举常量，以及 bit mask 常量
 func TestEnum(t *testing.T) {
 	t.Log("Monday == ", Monday, ", Tuesday == ", Tuesday)
 	t.Log("Readable == ", Readable, ", Executable == ", Executable)

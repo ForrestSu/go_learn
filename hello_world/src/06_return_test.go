@@ -1,9 +1,11 @@
 package try_test
 
 import (
-"testing"
+	"os"
+	"testing"
 )
 
 func TestReturn(t *testing.T) {
 	t.Log("hello world!")
+	os.Exit(-1)
 }

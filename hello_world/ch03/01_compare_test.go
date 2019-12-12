@@ -2,7 +2,7 @@ package ch03_test
 
 import "testing"
 
-// 数组比较
+// Go语言，比较两个数组： 纬度相同才能比较，然后逐个对比元素
 func TestCompareArray(t *testing.T) {
 	a := [...]int{1, 2, 3, 5}
 	b := [...]int{1, 2, 3, 5}
