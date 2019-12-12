@@ -1,14 +1,14 @@
-package main
+package ch03
 
 import (
 	"fmt"
-	"time"
+	"testing"
 )
 
 // 1 if 后面需要紧跟, 左花括号, 否则视为语法错
 // 2 右花括号} 后面如果有else语句，} 和 else 必须在同一行，否则视为语法错
 // 3 else 后面的花括号，可以写在下一行，也可以和 else 在同一行。
-func testIfElse(){
+func TestIfElse(t *testing.T) {
 	num := 99
 	if num <= 50 {
 		fmt.Println("number is less than or equal to 50")
@@ -17,6 +17,13 @@ func testIfElse(){
 	} else {
 		fmt.Println("number is greater than 100")
 	}
+}
+
+// Go 支持两段的写法
+func TestIF(t *testing.T) {
+   if a:=1+1; a == 2 {
+   	 t.Log("multi statement!")
+   }
 }
 
 /**
@@ -34,7 +41,7 @@ else {
 */
 
 // 显式跳出-多重循环
-func testBreakOuter() {
+func TestBreakOuter(t *testing.T) {
 outer:
 	for i := 0; i < 3; i++ {
 		for j := 1; j < 4; j++ {
@@ -46,19 +53,4 @@ outer:
 		}
 	}
 	println("is break")
-}
-
-func testDeadLoop() {
-	// 创建死循环
-	for {
-		println("hello")
-		time.Sleep(1000)
-	}
-}
-
-
-func main() {
-	testIfElse()
-	testBreakOuter()
-	testDeadLoop()
 }
