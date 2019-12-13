@@ -1,4 +1,4 @@
-package try_test
+package ch09_func_test
 
 import (
 	"fmt"

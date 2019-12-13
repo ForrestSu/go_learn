@@ -52,9 +52,9 @@ func TestSliceShareMemory(t *testing.T) {
 
 func TestSliceCompare(t *testing.T){
 	a := []int {1,2,3}
-	b := a[2:]
+	b := []int {1,2,3}
 	// invalid operation: a == b (slice can only be compared to nil)
 	if(a == b){
-
+		t.Log("equal!")
 	}
 }
