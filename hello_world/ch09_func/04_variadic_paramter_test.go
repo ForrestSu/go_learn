@@ -7,8 +7,8 @@ import (
 
 func change(ref ...string) {
 	ref[0] = "Go"
-	// 这里 s 是个新的切片对象，
-	// s 和 welcome 引用相同的数组
+	// ref 是一个新的切片对象，
+	// ref 和 welcome 引用相同的数组
 	fmt.Printf("ref address: %p\n", &ref)
 	ref = append(ref, "playground")
 	fmt.Println(ref)
