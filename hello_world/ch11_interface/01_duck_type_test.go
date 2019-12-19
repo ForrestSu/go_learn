@@ -1,4 +1,4 @@
-package ch11_duck_type
+package ch11_interface
 
 import (
 	"fmt"
