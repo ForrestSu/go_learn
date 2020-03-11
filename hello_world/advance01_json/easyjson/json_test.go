@@ -37,7 +37,7 @@ func BenchmarkEmbeddedJson(b *testing.B) {
 	//b.ResetTimer()
 	b.StartTimer()
 	e := new(Employee)
-	b.Log(b.N)
+	//b.Log(b.N)
 	for i := 0; i < b.N; i++ {
 
 		err := json.Unmarshal([]byte(jsonStr), e)

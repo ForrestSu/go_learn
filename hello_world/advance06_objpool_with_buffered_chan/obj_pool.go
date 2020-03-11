@@ -1,4 +1,4 @@
-package ch17_obj_pool
+package advance06_objpool
 
 import (
 	"errors"
