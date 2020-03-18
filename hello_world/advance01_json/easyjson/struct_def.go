@@ -1,4 +1,4 @@
-package src
+package proto
 
 type BasicInfo struct {
 	Name string `json:"name"`

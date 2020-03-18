@@ -1,7 +1,6 @@
-package easyjson
+package proto
 
 import(
-	. "./src"
 	"encoding/json"
 	"fmt"
 	"testing"
