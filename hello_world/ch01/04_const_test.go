@@ -1,10 +1,11 @@
-package ch01
+package main_test
 
 import (
 	"fmt"
+	"testing"
 )
 
-func testConst() {
+func TestConst(t *testing.T) {
    const w = 10 // allow
    // a = 11 // reassignment not allowed
    fmt.Println("const a is ", w)
@@ -22,7 +23,7 @@ func testConst() {
 /**
  go 是一种强类型语言
  */
-func testAliasType() {
+func TestAliasType(t *testing.T) {
 	//var defaultName = "Sam" //allowed
 	// 这里是定义一个新类型，
 	type myString string
@@ -38,14 +39,14 @@ func testAliasType() {
 	fmt.Printf("=>> type %T value %v\n", customName, customName)
 }
 
-func testDefaultType() {
+func TestDefaultType(t *testing.T) {
 	var i = 5
 	var f = 5.6
 	var c = 5 + 6i
 	fmt.Printf("i's type %T, f's type %T, c's type %T \n", i, f, c)
 }
 
-func testVar() {
+func TestVar(t *testing.T) {
 	const a = 5
 	var intVar int = a
 	var int32Var int32 = a
@@ -55,11 +56,3 @@ func testVar() {
 }
 
 // 数值常量可以在表达式中自由混合和匹配
-
-func main() {
-
-	testConst()
-	testAliasType()
-	testDefaultType()
-	testVar()
-}

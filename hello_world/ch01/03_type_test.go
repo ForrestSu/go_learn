@@ -1,11 +1,12 @@
-package main
+package main_test
 
 import (
 	"fmt"
+	"testing"
 	"unsafe"
 )
 
-func testBool() {
+func TestBool(t *testing.T) {
 
 	a := true
 	b := false
@@ -17,7 +18,7 @@ func testBool() {
 	fmt.Println("d:", d)
 }
 
-func testInt() {
+func TestInt(t *testing.T) {
 	var a int = 89
 	b := 95
 	fmt.Println("value of a is", a, "and b is", b)
@@ -25,7 +26,7 @@ func testInt() {
 	fmt.Printf("type of b is %T, size of b is %d \n", b, unsafe.Sizeof(b)) //type and size of b
 }
 
-func testComplex() {
+func TestComplex(t *testing.T) {
 	c1 := complex(5, 7)
 	c2 := 8 + 27i
 	cadd := c1 + c2
@@ -35,7 +36,7 @@ func testComplex() {
 }
 
 // go don't do auto convert type
-func testTypeAutoConvert() {
+func TestTypeAutoConvert(t *testing.T) {
 	// if define variable and don't use it, that an error!!
 	i := 15   //int
 	j := 17.8 //float64
@@ -46,18 +47,11 @@ func testTypeAutoConvert() {
 	fmt.Println("sum :", sum) // 32
 }
 
-func explicitConvert() {
+// 显示类型转换
+func TestExplicitTypeConvert(t *testing.T) {
 	i := 10
 	// this statement will not work without explicit conversion
 	var j = float64(i)
 	fmt.Println("j: ", j)
 }
 
-func main() {
-
-	testBool()
-	testInt()
-	testComplex()
-	testTypeAutoConvert()
-	explicitConvert()
-}
