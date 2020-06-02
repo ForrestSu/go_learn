@@ -29,14 +29,25 @@ func TestPassByValue(t *testing.T) {
 
 // 切片,传递引用
 func changeSlice(num []int) {
-	num[0] = 55
+	num[0] *= 10
+	num = append(num, 4)
+	fmt.Println("slice inside function ", num)
+}
+
+func passSlicePointer(num *[]int) {
+	(*num)[0] *= 10
+	*num = append(*num, 4)
 	fmt.Println("slice inside function ", num)
 }
 
 func TestSlicePassReference(t *testing.T) {
-	a := []int{12, 78, 50} // ... makes the compiler determine the length
+	a := []int{1, 2, 3} // ... makes the compiler determine the length
 	fmt.Println(a)
 	changeSlice(a)
 	fmt.Println("after:", a)
+	fmt.Println("length of a is", len(a))
+	//采用指针传参, 能够完整带出 slice 对象属性
+	passSlicePointer(&a)
+	fmt.Println("pointer:", a)
 	fmt.Println("length of a is", len(a))
 }
