@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    nats "github.com/nats-io/nats.go"
+    "github.com/nats-io/nats.go"
     "time"
 )
 
