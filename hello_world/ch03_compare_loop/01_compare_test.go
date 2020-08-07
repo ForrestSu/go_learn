@@ -1,4 +1,4 @@
-package ch03_test
+package ch03_compare_loop_test
 
 import "testing"
 

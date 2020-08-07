@@ -1,4 +1,4 @@
-package ch03_test
+package ch03_compare_loop_test
 
 import "testing"
 
@@ -8,7 +8,8 @@ const (
 	Executable
 )
 
-// Go语言 按照bit位, 置0
+// Go语言 &^ 表示按bit置0
+// 等价于c语言里的 &=~ (eg: a &= ~1;)
 func TestBitClear(t *testing.T) {
 	a := 7 //0111
 	// remove read permission

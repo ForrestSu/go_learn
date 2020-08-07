@@ -1,4 +1,4 @@
-package ch03
+package ch03_compare_loop
 
 import (
 	"fmt"

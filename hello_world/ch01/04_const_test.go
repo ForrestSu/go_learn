@@ -6,9 +6,9 @@ import (
 )
 
 func TestConst(t *testing.T) {
-   const w = 10 // allow
-   // a = 11 // reassignment not allowed
-   fmt.Println("const a is ", w)
+    const w = 10 // allow
+    // a = 11 // reassignment not allowed
+    fmt.Println("const a is ", w)
 
 	fmt.Println("Hello, playground")
 	//var a = math.Sqrt(4) //allowed
