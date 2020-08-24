@@ -27,13 +27,14 @@ func TestPassByValue(t *testing.T) {
 
 
 
-// 切片,传递引用
+// 由于切片是共享存储，切片对象这里会copy一份，但是堆上的元素数组是shared的.
 func changeSlice(num []int) {
 	num[0] *= 10
 	num = append(num, 4)
 	fmt.Println("slice inside function ", num)
 }
 
+// 采用指针，传入的切片对象会被修改
 func passSlicePointer(num *[]int) {
 	(*num)[0] *= 10
 	*num = append(*num, 4)
