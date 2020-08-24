@@ -7,10 +7,10 @@ package main
  */
 
 import (
-	_ "pkg/rectangle"
+	_ "github.com/ForrestSu/go_learn/hello_world/ch20_import_github/pkg/rectangle"
 )
 
-func Main1() {
-	// rectangle.init() //unexported name
+// rectangle.init() will be execute before main()
+func main22() {
 	println("enter pkg unused main...")
 }

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/ForrestSu/go_learn/hello_world/ch20_import_github/pkg/rectangle"
 	"log"
-	"pkg/rectangle"
 )
 /*
  * 1. package variables
@@ -36,7 +36,6 @@ func main() {
 	println("enter main...")
 	area := rectangle.Area(rectLen, rectWidth)
 	fmt.Println("area of rectangle = ", area)
-
 }
 
 
