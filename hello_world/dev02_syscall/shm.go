@@ -16,7 +16,7 @@ const (
 
 var mode = flag.Int("mode", 0, "0:write 1:read")
 
-//go:generate ./dev_syscall -mode 1
+//go:generate ./dev02_syscall -mode 1
 
 func main() {
 	flag.Parse()
