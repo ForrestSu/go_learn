@@ -1,4 +1,4 @@
-package dev01_string_utils
+package prod01_string_utils
 
 import (
 	"fmt"
