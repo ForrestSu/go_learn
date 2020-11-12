@@ -7,7 +7,6 @@ import (
 )
 
 func TestAbc(t *testing.T) {
-
 	str := "赵,钱,孙,李,赵"
 	str1 := strings.Split(str, ",")
 	fmt.Println(str1[0]) //赵
@@ -26,3 +25,4 @@ func TestAbc(t *testing.T) {
 	fmt.Println(str3) // "://baidu.com"
 
 }
+
