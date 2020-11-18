@@ -2,6 +2,7 @@ package prod01_string_utils
 
 import (
 	"fmt"
+	"github.com/stretchr/testify/assert"
 	"strings"
 	"testing"
 )
@@ -26,3 +27,12 @@ func TestAbc(t *testing.T) {
 
 }
 
+func TestReplaceAnd(t *testing.T) {
+	str := "ABCBC"
+	actual := strings.ReplaceAll(str, "ABC", "A")
+	assert.Equal(t, "ABC", actual)
+
+	str2 := "hello world"
+	actual2 := strings.ReplaceAll(str2, "hello", "one")
+	assert.Equal(t, "one world", actual2)
+}
