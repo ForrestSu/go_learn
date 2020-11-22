@@ -18,15 +18,15 @@ func TestMultiMatch(t *testing.T) {
 }
 
 // 使用switch 代替if..else if，使代码更简洁
-func TestSwitch(t *testing.T) {
+func TestEmptySwitch(t *testing.T) {
 	for i := 1; i <= 5; i++ {
 		switch {
 		case i%2 == 0:
-			t.Log("Even")
+			t.Log(i, "Even")
 		case i%2 == 1:
-			t.Log("odd")
+			t.Log(i, "odd")
 		default:
-			t.Log("unknown")
+			t.Log(i, "unknown")
 		}
 	}
 }
@@ -59,5 +59,7 @@ func TestFallThrough(t *testing.T) {
 		fallthrough
 	case num < 200:
 		fmt.Printf("%d is lesser than 200\n", num)
+	case num < 300:
+		fmt.Printf("%d is lesser than 300\n", num)
 	}
 }
