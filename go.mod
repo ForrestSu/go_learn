@@ -3,6 +3,7 @@ module github.com/ForrestSu/go_learn
 go 1.13
 
 require (
+	bou.ke/monkey v1.0.2
 	// client
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
