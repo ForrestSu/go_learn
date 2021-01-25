@@ -23,5 +23,4 @@ func TestMockUsage(t *testing.T) {
 	if v := GetFromDB(m, "Tom"); v != -1 {
 		t.Fatal("expected -1, but got", v)
 	}
-
 }
