@@ -51,10 +51,9 @@ func BenchmarkEmbeddedJson(b *testing.B) {
 }
 
 func BenchmarkEasyJson(b *testing.B) {
-	//b.ResetTimer()
-	b.StartTimer()
 	e := Employee{}
 	b.Log(b.N)
+	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		err := e.UnmarshalJSON([]byte(jsonStr))
 		if err != nil {

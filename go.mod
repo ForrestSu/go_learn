@@ -1,6 +1,6 @@
 module github.com/ForrestSu/go_learn
 
-go 1.13
+go 1.15
 
 require (
 	bou.ke/monkey v1.0.2
@@ -13,7 +13,7 @@ require (
 	github.com/google/go-cmp v0.5.0
 	github.com/google/wire v0.4.0
 	github.com/julienschmidt/httprouter v1.3.0
-	github.com/mailru/easyjson v0.7.1
+	github.com/mailru/easyjson v0.7.6
 	github.com/nats-io/nats-server/v2 v2.1.7 // indirect
 	github.com/nats-io/nats.go v1.10.0
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e

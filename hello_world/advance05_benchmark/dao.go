@@ -8,6 +8,7 @@ type WatchBuy struct {
 	PoxY    int `json:"pos_y"`
 }
 
+//go:generate
 type AidCache struct {
 	Aid      uint32 `json:"aid"`       // 广告位
 	TimeLen  uint32 `json:"time_len"`  // 视频时长
@@ -46,12 +47,18 @@ func NewAidCache() *AidCache {
 		ColumnId:     0,
 		IvbBreaks:    []uint32{1, 2, 3, 4, 5},
 		UploadQQ:     0,
-		WatchBuys:    nil,
+		WatchBuys:    []WatchBuy{{
+			Time:    1,
+			Product: 2,
+			Anchor:  3,
+			PosX:    4,
+			PoxY:    5,
+		}},
 		ImgTag:       []uint32{10, 20, 30, 40, 50},
-		CidStatus:    0,
-		NoAdStatus:   0,
-		VcomDealFlag: 0,
-		PayStatus:    0,
-		ResourceType: 0,
+		CidStatus:    1,
+		NoAdStatus:   2,
+		VcomDealFlag: 1,
+		PayStatus:    1,
+		ResourceType: 1,
 	}
 }
