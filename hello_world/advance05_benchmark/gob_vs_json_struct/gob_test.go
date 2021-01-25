@@ -1,4 +1,4 @@
-package advance05_benchmark
+package gob_vs_json_struct
 
 import (
 	"bytes"
@@ -13,6 +13,23 @@ func init() {
 	var data = &AidCache{}
 	gob.Register(data)
 }
+
+/**
+BenchmarkEncodeGob
+BenchmarkEncodeGob-4               93618             11888 ns/op            3312 B/op         73 allocs/op
+BenchmarkEncodeJson
+BenchmarkEncodeJson-4             295291              4120 ns/op            1344 B/op          5 allocs/op
+BenchmarkEncodeEasyJson
+BenchmarkEncodeEasyJson-4        1227080               969 ns/op             960 B/op          4 allocs/op
+
+BenchmarkDecodeGob
+BenchmarkDecodeGob-4               30088             39045 ns/op           13029 B/op        356 allocs/op
+BenchmarkDecodeJson
+BenchmarkDecodeJson-4             201504              5973 ns/op             232 B/op          4 allocs/op
+BenchmarkDecodeEasyJson
+BenchmarkDecodeEasyJson-4         544663              2331 ns/op               0 B/op          0 allocs/op
+PASS
+*/
 
 // serialize
 func serialize(value interface{}) ([]byte, error) {
@@ -40,13 +57,6 @@ func deserialize(valueBytes []byte) (interface{}, error) {
 	return value, nil
 }
 
-func SerialJson(value interface{}) ([]byte, error) {
-	return json.Marshal(value)
-}
-func DeSerialJson(value []byte, v interface{}) error {
-	return json.Unmarshal(value, v)
-}
-
 func TestGob(t *testing.T) {
 	origin := NewAidCache()
 	t.Logf("origin: %+v", origin)
@@ -59,7 +69,7 @@ func TestGob(t *testing.T) {
 	assert.True(t, ok)
 	assert.True(t, reflect.DeepEqual(origin, val))
 
-	jsonBytes, err := SerialJson(origin)
+	jsonBytes, err := json.Marshal(origin)
 	// t.Logf("json len %d, encoded: %s", len(jsonBytes), string(jsonBytes))
 	_ = jsonBytes
 }
@@ -81,7 +91,19 @@ func BenchmarkEncodeJson(b *testing.B) {
 	origin := NewAidCache()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, err := SerialJson(origin)
+		_, err := json.Marshal(origin)
+		if err != nil {
+			b.Errorf("err:%+v", err)
+		}
+	}
+}
+
+// easyjson encoded
+func BenchmarkEncodeEasyJson(b *testing.B) {
+	origin := NewAidCache()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_, err := origin.MarshalJSON()
 		if err != nil {
 			b.Errorf("err:%+v", err)
 		}
@@ -107,14 +129,33 @@ func BenchmarkDecodeGob(b *testing.B) {
 // json encoded
 func BenchmarkDecodeJson(b *testing.B) {
 	origin := NewAidCache()
-	encoded, err := SerialJson(origin)
+	encoded, err := json.Marshal(origin)
 	if err != nil {
 		b.Errorf("err:%+v", err)
 	}
 	deObj := &AidCache{}
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		err := DeSerialJson(encoded, deObj)
+		err := json.Unmarshal(encoded, deObj)
+		if err != nil {
+			b.Errorf("err:%+v", err)
+		}
+	}
+}
+
+
+// easyjson decoded
+func BenchmarkDecodeEasyJson(b *testing.B) {
+	origin := NewAidCache()
+	encoded, err := origin.MarshalJSON()
+	if err != nil {
+		b.Errorf("err:%+v", err)
+	}
+	//////////
+	deObj := &AidCache{}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		err := deObj.UnmarshalJSON(encoded)
 		if err != nil {
 			b.Errorf("err:%+v", err)
 		}

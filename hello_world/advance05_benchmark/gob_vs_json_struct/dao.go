@@ -1,4 +1,6 @@
-package advance05_benchmark
+package gob_vs_json_struct
+
+//go:generate easyjson -all dao.go
 
 type WatchBuy struct {
 	Time    int `json:"time"`
@@ -8,7 +10,6 @@ type WatchBuy struct {
 	PoxY    int `json:"pos_y"`
 }
 
-//go:generate
 type AidCache struct {
 	Aid      uint32 `json:"aid"`       // 广告位
 	TimeLen  uint32 `json:"time_len"`  // 视频时长

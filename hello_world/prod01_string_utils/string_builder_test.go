@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestStringBuilder(t *testing.T) {
+func Test_StringBuilder(t *testing.T) {
 
 	var b strings.Builder
 	t.Log(b.Len())
@@ -17,7 +17,7 @@ func TestStringBuilder(t *testing.T) {
 	t.Log(b.Cap())
 }
 
-func BenchmarkSprintf(b *testing.B) {
+func Benchmark_Sprintf(b *testing.B) {
 	uin := "3192695574"
 	qqMusicKey := "@DNNPx7IFA"
 	for i := 0; i < b.N; i++ {
@@ -27,7 +27,7 @@ func BenchmarkSprintf(b *testing.B) {
 	}
 }
 
-func BenchmarkBytes(b *testing.B) {
+func Benchmark_BytesBuffer(b *testing.B) {
 	uin := "3192695574"
 	qqMusicKey := "@DNNPx7IFA"
 	uinNames := [...]string{"qqmusic_uin", "qq", "p_uin", "uin", "qm_keyst", "p_luin"}
@@ -50,7 +50,7 @@ func BenchmarkBytes(b *testing.B) {
 	}
 }
 
-func BenchmarkBytesV2(b *testing.B) {
+func Benchmark_BytesBuffer_Grows(b *testing.B) {
 	uin := "3192695574"
 	qqMusicKey := "@DNNPx7IFA"
 	uinNames := [...]string{"qqmusic_uin", "qq", "p_uin", "uin", "qm_keyst", "p_luin"}
@@ -74,12 +74,11 @@ func BenchmarkBytesV2(b *testing.B) {
 	}
 }
 
-func BenchmarkStringBuilder(b *testing.B) {
+func Benchmark_StringBuilder(b *testing.B) {
 	uin := "3192695574"
 	qqMusicKey := "@DNNPx7IFA"
 	uinNames := [...]string{"qqmusic_uin", "qq", "p_uin", "uin", "qm_keyst", "p_luin"}
 	keyNames := [...]string{"qqmusic_key", "authst", "p_skey", "skey", "lskey", "p_lskey"}
-	// b.Grow(255)
 	for i := 0; i < b.N; i++ {
 		var b strings.Builder
 		for i := range uinNames {
@@ -121,12 +120,7 @@ func handleCookies(uin string, musicKey string) string {
 		// uin
 		b.WriteString(uinTags[i])
 		b.WriteString("=")
-		if uinTags[i] != "qm_keyst" {
-			b.WriteString(uin)
-		} else {
-			// if "qm_keyst",需要填musicKey
-			b.WriteString(musicKey)
-		}
+		b.WriteString(musicKey)
 		b.WriteString("; ")
 
 		// musicKey
@@ -141,7 +135,7 @@ func handleCookies(uin string, musicKey string) string {
 	return result
 }
 
-func BenchmarkStringBuilderV2(b *testing.B) {
+func Benchmark_StringBuilder_Grows(b *testing.B) {
 	// expects := "qqmusic_uin=3192695574; qqmusic_key=@DNNPx7IFA; qq=3192695574; authst=@DNNPx7IFA; p_uin=3192695574; p_skey=@DNNPx7IFA; uin=3192695574; skey=@DNNPx7IFA; qm_keyst=@DNNPx7IFA; lskey=@DNNPx7IFA; p_luin=3192695574; p_lskey=@DNNPx7IFA;"
 
 	uin := "3192695574"
