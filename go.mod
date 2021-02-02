@@ -21,4 +21,6 @@ require (
 	github.com/stretchr/testify v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	google.golang.org/protobuf v1.25.0 // indirect
+	gorm.io/driver/mysql v1.0.4
+	gorm.io/gorm v1.20.12
 )
