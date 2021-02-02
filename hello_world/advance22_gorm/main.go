@@ -2,10 +2,11 @@ package main
 
 import (
 	"errors"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
 	"log"
 	"time"
+
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
 var createStudent = `
