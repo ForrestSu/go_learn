@@ -4,8 +4,8 @@ go 1.15
 
 require (
 	bou.ke/monkey v1.0.2
-	// client
 	github.com/ArthurHlt/go-eureka-client v1.1.0
+	github.com/agiledragon/gomonkey/v2 v2.1.0
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang/mock v1.4.4
