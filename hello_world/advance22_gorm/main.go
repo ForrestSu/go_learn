@@ -10,25 +10,35 @@ import (
 	"gorm.io/gorm/schema"
 )
 
-var createStudent = `
-CREATE TABLE Product (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(32) NOT NULL COMMENT '用户名称',
-  age int(11) NOT NULL COMMENT '年龄',
-  PRIMARY KEY (id)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
-`
-
 type Product struct {
 	gorm.Model
 	Code   string
 	Price  int
 	Expire time.Time
+	OpenID string `gorm:"not null; index; column:open_id; type:varchar(64);"`
+	Sex    int8   `gorm:"comment:'注释'"`
+	Text   string `gorm:"size:64"`
+}
+
+type User struct {
+	gorm.Model
+	Name      string `gorm:"size:64; comment:'用户名'"`
+	OpenID    string `gorm:"size:64; index; comment:'微信OpenID'"`
+	Birth     int32  `gorm:"comment:'出生年月YYYYMM'"`
+	Sex       int8   `gorm:"comment:'性别'"`
+	Marital   int8
+	Education int8
+	Job       int8
+	Income    int8
+	IsVip     bool   `gorm:"not null; default:false"` // 是否为腾讯视频会员
+	QQ        string `gorm:"size:32"`
+	WX        string `gorm:"size:32"`
+	State     int8   `gorm:"comment:'有效状态'"`
+	Tags      string `gorm:"comment:'用户标签ID逗号分隔'"`
 }
 
 func main() {
-	// https://github.com/go-sql-driver/mysql
-	dsn := "root:123456@tcp(127.0.0.1:3306)/testdb?charset=utf8&parseTime=True&loc=Local"
+	dsn := "root:123456@tcp(127.0.0.1:3306)/survey_db?charset=utf8&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		NamingStrategy: &schema.NamingStrategy{
 			TablePrefix:   "t_",
@@ -41,7 +51,7 @@ func main() {
 	}
 
 	// Migrate the schema
-	db.AutoMigrate(&Product{})
+	db.AutoMigrate(&Product{}, &User{})
 
 	// Create
 	db.Create(&Product{Code: "D42", Price: 100})
