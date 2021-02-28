@@ -5,11 +5,15 @@ import (
 	"log"
 	"time"
 
+	"github.com/kylelemons/godebug/pretty"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
 )
 
+// Product struct
 type Product struct {
 	gorm.Model
 	Code   string
@@ -20,25 +24,8 @@ type Product struct {
 	Text   string `gorm:"size:64"`
 }
 
-type User struct {
-	gorm.Model
-	Name      string `gorm:"size:64; comment:'用户名'"`
-	OpenID    string `gorm:"size:64; index; comment:'微信OpenID'"`
-	Birth     int32  `gorm:"comment:'出生年月YYYYMM'"`
-	Sex       int8   `gorm:"comment:'性别'"`
-	Marital   int8
-	Education int8
-	Job       int8
-	Income    int8
-	IsVip     bool   `gorm:"not null; default:false"` // 是否为腾讯视频会员
-	QQ        string `gorm:"size:32"`
-	WX        string `gorm:"size:32"`
-	State     int8   `gorm:"comment:'有效状态'"`
-	Tags      string `gorm:"comment:'用户标签ID逗号分隔'"`
-}
-
-func main() {
-	dsn := "root:123456@tcp(127.0.0.1:3306)/survey_db?charset=utf8&parseTime=True&loc=Local"
+func HelloWorldTest() {
+	dsn := "root:123456@tcp(127.0.0.1:3306)/testdb?charset=utf8&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		NamingStrategy: &schema.NamingStrategy{
 			TablePrefix:   "t_",
@@ -51,7 +38,7 @@ func main() {
 	}
 
 	// Migrate the schema
-	db.AutoMigrate(&Product{}, &User{})
+	db.AutoMigrate(&Product{})
 
 	// Create
 	db.Create(&Product{Code: "D42", Price: 100})
@@ -78,5 +65,47 @@ func main() {
 
 	// Delete - delete product
 	db.Delete(&product, 1)
+}
 
+// User has many CreditCards, UserID is the foreign key
+type User struct {
+	gorm.Model
+	Name        string
+	CreditCards []CreditCard `gorm:"foreignKey:UserID"`
+}
+
+type CreditCard struct {
+	gorm.Model
+	TagName string
+	UserID  uint
+}
+
+func OneToManyTest() {
+
+	dsn := "root:123456@tcp(127.0.0.1:3306)/testdb?charset=utf8&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+		NamingStrategy: &schema.NamingStrategy{
+			TablePrefix:   "t_",
+			SingularTable: true,
+		},
+		Logger: logger.Default.LogMode(logger.Info),
+	})
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	// Migrate the schema
+	db.AutoMigrate(&User{}, &CreditCard{})
+
+	// db.Create(&User{Name: "张三", CreditCards: []CreditCard{{TagName: "男"}, {TagName: "90后"}}})
+	// db.Create(&User{Name: "李四", CreditCards: []CreditCard{{TagName: "男"}, {TagName: "90后"}}})
+	var users []User
+	db.Find(&users)
+	log.Println(pretty.Sprint(users))
+}
+
+func main() {
+	// HelloWorldTest()
+	OneToManyTest()
 }
