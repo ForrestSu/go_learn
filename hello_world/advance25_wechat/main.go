@@ -37,11 +37,11 @@ func main() {
 
 	// oauth.GetUserAccessToken()
 
-	/*openID := "openID"
-	if userInfo, err := oauth.GetUserInfo(accessToken, openID); err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Printf("userInfo = %v\n", userInfo)
-	}*/
+	//openID := "openID"
+	//if userInfo, err := oauth.GetUserInfo(accessToken, openID, ""); err != nil {
+	//	fmt.Println(err)
+	//} else {
+	//	fmt.Printf("userInfo = %v\n", userInfo)
+	//}
 
 }
