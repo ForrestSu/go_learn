@@ -1,12 +1,11 @@
 package main
 
 import (
-	"github.com/kylelemons/godebug/pretty"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
-	"gorm.io/gorm/schema"
 	"log"
+
+	"github.com/ForrestSu/go_learn/hello_world/advance22_gorm/dao"
+	"github.com/kylelemons/godebug/pretty"
+	"gorm.io/gorm"
 )
 
 // MyUser has many CreditCards, UserID is the foreign key
@@ -24,19 +23,7 @@ type CreditCard struct {
 
 func OneToManyTest() {
 
-	dsn := "root:123456@tcp(127.0.0.1:3306)/testdb?charset=utf8&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
-		NamingStrategy: &schema.NamingStrategy{
-			TablePrefix:   "t_",
-			SingularTable: true,
-		},
-		Logger: logger.Default.LogMode(logger.Info),
-	})
-	if err != nil {
-		log.Println(err)
-		return
-	}
-
+	var db = dao.GetDB()
 	// Migrate the schema
 	db.AutoMigrate(&MyUser{}, &CreditCard{})
 

@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/kylelemons/godebug/pretty"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
-	"gorm.io/gorm/schema"
 	"log"
+
+	"github.com/kylelemons/godebug/pretty"
+	"gorm.io/gorm"
+
+	"github.com/ForrestSu/go_learn/hello_world/advance22_gorm/dao"
 )
 
 // 多对多-关系
@@ -25,35 +25,24 @@ type Language struct {
 	Users []*User `gorm:"many2many:user_languages;"`
 }
 
-func LinksTest() {
-	dsn := "root:123456@tcp(127.0.0.1:3306)/testdb?charset=utf8&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
-		NamingStrategy: &schema.NamingStrategy{
-			TablePrefix:   "t_",
-			SingularTable: true,
-		},
-		Logger: logger.Default.LogMode(logger.Info),
-	})
-	if err != nil {
-		log.Println(err)
-		return
-	}
+func insert(db *gorm.DB) {
 
 	// Migrate the schema
-	//db.AutoMigrate(&User{}, &Language{})
+	db.AutoMigrate(&User{}, &Language{})
 
-	// db.Create(&Language{Name: "汉语"})
-	// db.Create(&User{Name: "张三", Languages: []Language{{ID: 1}}})
+	var langCN = Language{Name: "汉语"}
+	db.Create(&langCN)
+	var langEN = Language{Name: "English"}
+	db.Create(&langEN)
 
-	//var user1 User
-	//db.Where("id = ?", "1").First(&user1)
-	//
-	//// 关联的关键代码
-	//db.Model(&user1).Association("Role").Find(&user1.Role)
-	//log.Println(pretty.Sprint(user1))
+	// user
+	db.Create(&User{Name: "张三", Languages: []*Language{{ID: 1}, {ID: 2}}})
+	db.Create(&User{Name: "李四", Languages: []*Language{{ID: 2}}})
+}
 
+func QueryAll(db *gorm.DB) {
 	// find all
-	log.Println("=====")
+	log.Println("== query all ===")
 	// 查出所有用户，以及他们会的语言
 	var users []User
 	db.Preload("Languages").Find(&users)
@@ -63,12 +52,23 @@ func LinksTest() {
 	var lans []Language
 	db.Preload("Users").Find(&lans)
 	log.Println(pretty.Sprint(lans))
-
-
-
-
 }
 
+// QueryLinks ...
+func QueryLinks(db *gorm.DB) {
+	// 查询 id = 1 的用户信息
+	var user1 User
+	db.Find(&user1, 1)
+	log.Println(pretty.Sprint(user1))
+
+	// 关联的关键代码
+	//db.Model(&user1).Association("Role").Find(&user1.Role)
+	//log.Println(pretty.Sprint(user1))
+
+}
 func main() {
-	LinksTest()
+	var db = dao.GetDB()
+	// insert(db)
+	// QueryAll(db)
+	QueryLinks(db)
 }
