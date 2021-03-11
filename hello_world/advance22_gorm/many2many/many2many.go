@@ -62,7 +62,16 @@ func QueryLinks(db *gorm.DB) {
 	log.Println(pretty.Sprint(user1))
 
 	// 关联的关键代码
-	//db.Model(&user1).Association("Role").Find(&user1.Role)
+	var userAssociation = db.Model(&user1).Association("Languages")
+
+	// 替换所有关联 (为空则表示删除该用户的所有关联)
+	userAssociation.Replace([]Language{{ID: 3}, {ID: 4}, {ID: 5}})
+
+	// 再次查询关联
+	var langs []Language
+	db.Model(&user1).Association("Languages").Find(&langs)
+	log.Println("langs = \n", pretty.Sprint(langs))
+
 	//log.Println(pretty.Sprint(user1))
 
 }
