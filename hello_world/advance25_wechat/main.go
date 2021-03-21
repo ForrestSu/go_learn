@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/kylelemons/godebug/pretty"
+	"github.com/silenceper/wechat/v2/officialaccount"
 	"log"
 
 	"github.com/silenceper/wechat/v2"
@@ -9,7 +11,9 @@ import (
 	offConfig "github.com/silenceper/wechat/v2/officialaccount/config"
 )
 
-func main() {
+var officialAccount *officialaccount.OfficialAccount
+
+func InitWechat() {
 	/*
 		https://api.weixin.qq.com/sns/userinfo?access_token=42_el5DMp-axQsZ2qhvoL-yh9tCuv0nFDD9sInND29psWnMdBn9_F-kTZJtAWwzIMUfio_rHdQAjcBBOA7vID3a2YSPsUrRu1gKjDQb2ntZnKtbo5_dKiVtN3-iMQbbqD8iyLTbayAE6al7m7KmTKZeAHAZQF&openid=wx39c38462bc2ca067&lang=zh_CN
 	*/
@@ -22,7 +26,10 @@ func main() {
 		Token:     "xxx",
 		Cache:     memory,
 	}
-	officialAccount := wc.GetOfficialAccount(cfg)
+	officialAccount = wc.GetOfficialAccount(cfg)
+}
+
+func GetToken() {
 	oauth := officialAccount.GetOauth()
 	accessToken, err := oauth.GetAccessToken()
 	if err != nil {
@@ -43,5 +50,18 @@ func main() {
 	//} else {
 	//	fmt.Printf("userInfo = %v\n", userInfo)
 	//}
+}
 
+func GetTemplateMsg() {
+	var templates = officialAccount.GetTemplate()
+	list, err := templates.List()
+	log.Println(err)
+	pretty.Print(list)
+	// templates.Send()
+}
+
+func main() {
+	InitWechat()
+	// GetToken()
+	GetTemplateMsg()
 }
