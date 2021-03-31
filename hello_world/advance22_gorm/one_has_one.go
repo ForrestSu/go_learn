@@ -52,8 +52,4 @@ func LinksTest() {
 	log.Println(pretty.Sprint(users))
 }
 
-func main() {
-	// HelloWorldTest()
-	// OneToManyTest()
-	LinksTest()
-}
+

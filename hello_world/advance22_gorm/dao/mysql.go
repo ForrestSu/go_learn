@@ -21,7 +21,7 @@ func init() {
 
 // defaultInitMysql  初始化mysql
 func defaultInitMysql() {
-	dsn := "root:123456@tcp(localhost:3306)/testdb?charset=utf8&parseTime=True&loc=Local"
+	dsn := "root:123456@tcp(localhost:3306)/survey_db?charset=utf8&parseTime=True&loc=Local"
 	var err error
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		NamingStrategy: &schema.NamingStrategy{

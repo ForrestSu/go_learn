@@ -13,12 +13,31 @@ import (
 // Product struct
 type Product struct {
 	gorm.Model
-	Code   string
+	Name   string
 	Price  int
 	Expire time.Time
-	OpenID string `gorm:"not null; index; column:open_id; type:varchar(64);"`
-	Sex    int8   `gorm:"comment:'注释'"`
-	Text   string `gorm:"size:64"`
+	OpenID string `gorm:"index; column:open_id; type:varchar(64);"`
+}
+
+func main() {
+	// HelloWorldTest()
+	// OneToManyTest()
+	// LinksTest()
+	TestInsertOmit()
+}
+
+func TestInsertOmit() {
+	var db = dao.GetDB()
+	// Migrate the schema
+	db.AutoMigrate(&Product{})
+	//var filter = func(db *gorm.DB) *gorm.DB {
+	//	return db.Omit("text", "code")
+	//}
+	var omitFields []string
+	if omitFields == nil {
+		log.Println("omitFields is nil")
+	}
+	db.Omit(omitFields...).Create(&Product{Name: "sunquan", Price: 100})
 }
 
 func HelloWorldTest() {
@@ -28,7 +47,7 @@ func HelloWorldTest() {
 	db.AutoMigrate(&Product{})
 
 	// Create
-	db.Create(&Product{Code: "D42", Price: 100})
+	db.Create(&Product{Name: "D42", Price: 100})
 
 	// Read
 	var product Product
@@ -47,7 +66,7 @@ func HelloWorldTest() {
 	// Update - update product's price to 200
 	db.Model(&product).Update("Price", 200)
 	// Update - update multiple fields
-	db.Model(&product).Updates(Product{Price: 200, Code: "F42"}) // non-zero fields
+	db.Model(&product).Updates(Product{Price: 200, Name: "F42"}) // non-zero fields
 	db.Model(&product).Updates(map[string]interface{}{"Price": 200, "Code": "F42"})
 
 	// Delete - delete product
