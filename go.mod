@@ -6,6 +6,7 @@ require (
 	bou.ke/monkey v1.0.2
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/agiledragon/gomonkey/v2 v2.1.0
+	github.com/deckarep/golang-set v1.7.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang/mock v1.4.4
@@ -24,7 +25,7 @@ require (
 	github.com/stretchr/testify v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	google.golang.org/protobuf v1.25.0 // indirect
-	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
+	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gorm.io/driver/mysql v1.0.5
 	gorm.io/gorm v1.21.3
 )
