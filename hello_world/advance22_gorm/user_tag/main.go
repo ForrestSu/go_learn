@@ -19,7 +19,7 @@ func QueryUsers() {
 	*/
 	var relations []UserTag
 	dao.GetDB().Table("t_user_tags").
-		Select("t_user_tags.user_id, t_user_tags.tag_id, t_tag.category_tag_id").
+		Select("t_tag.category_tag_id, t_user_tags.user_id, t_user_tags.tag_id").
 		Joins("left join t_tag on t_user_tags.tag_id = t_tag.id").
 		// Where("t_user_tags.tag_id IN ?", tagIDs).
 		Order("t_tag.category_tag_id").
@@ -29,7 +29,7 @@ func QueryUsers() {
 	// 思路二: 根据传入的标签,查询这些标签下的所有用户 (按category_id 排序)
 	// 1 然后把同一 category_id 下的用户ID,  合并+去重
 	// 2 把不同category_id 用户组做 mapreduce,  最后获取用户组中计数值 == category_id总数的用户
-	// 3 实现分页
+	// 3 获取userID 列表，走正常的 in 查询规则
 
 	//var sets []*strset.Set
 	//for _, group := range groups {
@@ -65,9 +65,7 @@ func Solve(records []UserTag) {
 	// 计算交集
 	var selectUserIDSet = uset.Intersection(sets...)
 	var userIDs = selectUserIDSet.List()
-	log.Println(userIDs)
-	//
-	//sort.Ints(userIDs)
+	log.Println(">>> ", userIDs)
 }
 
 func main() {
