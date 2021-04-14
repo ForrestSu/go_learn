@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
-	"net/url"
+
+	"github.com/silenceper/wechat/v2/officialaccount/material"
 
 	"github.com/kylelemons/godebug/pretty"
 	"github.com/silenceper/wechat/v2"
@@ -39,8 +40,6 @@ func GetToken() {
 		fmt.Printf("accessToken = %v\n", accessToken)
 	}
 
-	urlStr := url.QueryEscape("/v1/h5/hello")
-
 	var redirectUrl = "https://survey.video.qq.com/v1/h5/login?redirect_url=%2Fv1%2Fh5%2Fhello"
 
 	url, _ := oauth.GetRedirectURL(redirectUrl, "snsapi_userinfo", "state")
@@ -56,6 +55,7 @@ func GetToken() {
 	//}
 }
 
+// GetTemplateMsg 查询消息模板
 func GetTemplateMsg() {
 	var templates = officialAccount.GetTemplate()
 	list, err := templates.List()
@@ -64,8 +64,22 @@ func GetTemplateMsg() {
 	// templates.Send()
 }
 
+// GetMaterial 查询所有图文消息
+func GetMaterial() {
+	var mater = officialAccount.GetMaterial()
+	list, err := mater.BatchGetMaterial(material.PermanentMaterialTypeNews, 0, 20)
+	log.Println(err)
+	pretty.Print(list)
+
+	var bc = officialAccount.GetBroadcast()
+	result, err := bc.GetSpeed()
+	log.Println(err)
+	pretty.Print(result)
+}
+
 func main() {
 	InitWechat()
-	GetToken()
-	//GetTemplateMsg()
+	// GetToken()
+	// GetTemplateMsg()
+	GetMaterial()
 }
