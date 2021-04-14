@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/kylelemons/godebug/pretty"
-	"github.com/silenceper/wechat/v2/officialaccount"
 	"log"
+	"net/url"
 
+	"github.com/kylelemons/godebug/pretty"
 	"github.com/silenceper/wechat/v2"
 	"github.com/silenceper/wechat/v2/cache"
+	"github.com/silenceper/wechat/v2/officialaccount"
 	offConfig "github.com/silenceper/wechat/v2/officialaccount/config"
 )
 
@@ -38,8 +39,11 @@ func GetToken() {
 		fmt.Printf("accessToken = %v\n", accessToken)
 	}
 
-	var redirectUrl = "https://www.cttonghe.com/v1/h5/login"
-	url, _ := oauth.GetRedirectURL(redirectUrl, "snsapi_userinfo", "STATE")
+	urlStr := url.QueryEscape("/v1/h5/hello")
+
+	var redirectUrl = "https://survey.video.qq.com/v1/h5/login?redirect_url=%2Fv1%2Fh5%2Fhello"
+
+	url, _ := oauth.GetRedirectURL(redirectUrl, "snsapi_userinfo", "state")
 	log.Println(url)
 
 	// oauth.GetUserAccessToken()
@@ -62,6 +66,6 @@ func GetTemplateMsg() {
 
 func main() {
 	InitWechat()
-	// GetToken()
-	GetTemplateMsg()
+	GetToken()
+	//GetTemplateMsg()
 }

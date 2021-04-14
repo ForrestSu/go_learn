@@ -14,7 +14,7 @@ import (
 type Product struct {
 	gorm.Model
 	Name   string
-	Price  int
+	Price  uint64
 	Expire time.Time
 	OpenID string `gorm:"index; column:open_id; type:varchar(64);"`
 }
@@ -23,9 +23,23 @@ func main() {
 	// HelloWorldTest()
 	// OneToManyTest()
 	// LinksTest()
-	TestInsertOmit()
+	// TestInsertOmit()
+	TestUpdateDifferentType()
 }
 
+func TestUpdateDifferentType() {
+	var db = dao.GetDB()
+	// Migrate the schema
+	db.AutoMigrate(&Product{})
+
+	var product = &Product{Name: "D42", Price: 100}
+	db.Create(product)
+	db.Model(&product).Update("Price", "20000000")
+	// 注意：虽然sql支持为int类型的列，更新时使用string 类型的值；
+	// 但还是建议
+}
+
+// TestInsertOmit 测试 Insert时，显式 omit字段
 func TestInsertOmit() {
 	var db = dao.GetDB()
 	// Migrate the schema
@@ -34,9 +48,6 @@ func TestInsertOmit() {
 	//	return db.Omit("text", "code")
 	//}
 	var omitFields []string
-	if omitFields == nil {
-		log.Println("omitFields is nil")
-	}
 	db.Omit(omitFields...).Create(&Product{Name: "sunquan", Price: 100})
 }
 
