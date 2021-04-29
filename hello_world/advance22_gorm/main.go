@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"log"
+	"reflect"
 	"time"
 
 	"github.com/ForrestSu/go_learn/hello_world/advance22_gorm/dao"
@@ -27,16 +28,30 @@ func main() {
 	TestUpdateDifferentType()
 }
 
+type ScopeFunc func(db *gorm.DB) *gorm.DB
+
 func TestUpdateDifferentType() {
 	var db = dao.GetDB()
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
 
-	var product = &Product{Name: "D42", Price: 100}
-	db.Create(product)
-	db.Model(&product).Update("Price", "20000000")
+	//var product = &Product{Name: "D42", Price: 100}
+	// db.Create(product)
+	//db.Model(&product).Update("Price", "100")
 	// 注意：虽然sql支持为int类型的列，更新时使用string 类型的值；
 	// 但还是建议
+	var ret = &Product{}
+	db.Scopes(FilterEqual("price", 0)).Find(ret)
+
+}
+
+func FilterEqual(column string, value interface{}) ScopeFunc {
+	return func(db *gorm.DB) *gorm.DB {
+		if reflect.ValueOf(value).IsZero() {
+			return db // 不过滤
+		}
+		return db.Where(column+" = ? ", value)
+	}
 }
 
 // TestInsertOmit 测试 Insert时，显式 omit字段
