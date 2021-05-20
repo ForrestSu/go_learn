@@ -14,7 +14,7 @@ import (
 */
 
 // User
-type User struct {
+type Users struct {
 	gorm.Model
 	Name   string
 	RoleID uint
@@ -45,11 +45,9 @@ func LinksTest() {
 
 	// find all
 	log.Println("=====")
-	var users []User
+	var users []Users
 	db.Joins("Role").Find(&users)
 
 	// db.Preload("Role").Find(&users)
 	log.Println(pretty.Sprint(users))
 }
-
-

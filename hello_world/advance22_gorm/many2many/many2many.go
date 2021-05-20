@@ -77,7 +77,7 @@ func QueryLinks(db *gorm.DB) {
 }
 func main() {
 	var db = dao.GetDB()
-	// insert(db)
+	insert(db)
 	// QueryAll(db)
-	QueryLinks(db)
+	//QueryLinks(db)
 }
