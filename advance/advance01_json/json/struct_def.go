@@ -2,7 +2,7 @@ package jsontest
 
 type BasicInfo struct {
 	Name string `json:"name"`
-	Age int `json:"age"`
+	Age  int    `json:"age"`
 }
 
 type JobInfo struct {
@@ -11,5 +11,5 @@ type JobInfo struct {
 
 type Employee struct {
 	Basic BasicInfo `json:"basic"`
-	Job  JobInfo `json:"job"`
+	Job   JobInfo   `json:"job"`
 }

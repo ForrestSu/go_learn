@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/ForrestSu/go_learn/hello_world/ch20_import_github/pkg/rectangle"
 	"log"
+
+	"github.com/ForrestSu/go_learn/hello_world/ch20_import_github/pkg/rectangle"
 )
+
 /*
  * 1. package variables
  */
@@ -30,7 +32,7 @@ func init() {
 接下来初始化的是 Package 级别变量 rectLen 和 rectWidth。
 调用 init 函数
 最后调用 main 函数
- */
+*/
 func main() {
 	// rectangle.init() //unexported name
 	println("enter main...")
@@ -38,11 +40,10 @@ func main() {
 	fmt.Println("area of rectangle = ", area)
 }
 
-
 /**
 output:
 rectangle package initialized
 main package initialized
 enter main...
 area of rectangle =  42
- */
+*/

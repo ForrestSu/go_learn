@@ -25,7 +25,7 @@ func TestEnum(t *testing.T) {
 }
 
 // 测试位运算
-func TestBit(t *testing.T){
+func TestBit(t *testing.T) {
 	a := 7 //0111
-	t.Log(a&Readable , a&Writable, a&Executable)
+	t.Log(a&Readable, a&Writable, a&Executable)
 }

@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/ForrestSu/go_learn/hello_world/advance22_gorm/dao"
+	"github.com/ForrestSu/go_learn/advance/advance22_gorm/dao"
 
 	"gorm.io/gorm"
 )

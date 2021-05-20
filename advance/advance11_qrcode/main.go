@@ -1,8 +1,9 @@
 package main
 
 import (
-    "fmt"
-    "github.com/skip2/go-qrcode"
+	"fmt"
+
+	"github.com/skip2/go-qrcode"
 )
 
 /**
@@ -13,9 +14,9 @@ qrcode.WriteFile()
 4 filename: 表示生成的文件名(含路径)
 */
 func main() {
-    content := "https://forrestsu.github.io/"
-    err := qrcode.WriteFile(content, qrcode.Medium, 256, "./qrcode.png")
-    if err != nil {
-        fmt.Println("fail to generate qrcode:", err)
-    }
+	content := "https://forrestsu.github.io/"
+	err := qrcode.WriteFile(content, qrcode.Medium, 256, "./qrcode.png")
+	if err != nil {
+		fmt.Println("fail to generate qrcode:", err)
+	}
 }

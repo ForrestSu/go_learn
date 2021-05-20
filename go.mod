@@ -6,7 +6,6 @@ require (
 	bou.ke/monkey v1.0.2
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/agiledragon/gomonkey/v2 v2.1.0
-	github.com/bwmarrin/snowflake v0.3.0
 	github.com/deckarep/golang-set v1.7.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/go-sql-driver/mysql v1.5.0

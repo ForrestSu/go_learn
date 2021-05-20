@@ -13,7 +13,7 @@ type Human struct {
 
 type Student struct {
 	//h      Human //has-a 非匿名组合
-	Human //is-a(Pseudo) 匿名组合
+	Human  //is-a(Pseudo) 匿名组合
 	school string
 	//name string
 }

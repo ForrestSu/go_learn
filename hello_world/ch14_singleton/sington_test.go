@@ -19,14 +19,14 @@ var once sync.Once
 func singleton() *SingleObj {
 	once.Do(func() {
 		fmt.Println("Create Singleton")
-		obj = &SingleObj{name:"hah"}
+		obj = &SingleObj{name: "hah"}
 		fmt.Printf("==> %T, %x\n", obj, unsafe.Pointer(obj))
 	})
 	return obj
 }
 
 func TestSingleton(t *testing.T) {
-    wg := sync.WaitGroup{}
+	wg := sync.WaitGroup{}
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
 		go func() {
