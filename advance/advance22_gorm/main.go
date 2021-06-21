@@ -1,10 +1,13 @@
 package main
 
 import (
+	"database/sql"
 	"errors"
 	"log"
 	"reflect"
 	"time"
+
+	"github.com/kylelemons/godebug/pretty"
 
 	"github.com/ForrestSu/go_learn/advance/advance22_gorm/dao"
 
@@ -14,10 +17,10 @@ import (
 // Product struct
 type Product struct {
 	gorm.Model
-	Name   string
-	Price  uint64
-	Expire time.Time
-	OpenID string `gorm:"index; column:open_id; type:varchar(64);"`
+	Name    string
+	Price   uint64
+	Expired sql.NullTime
+	OpenID  string `gorm:"index; column:open_id; type:varchar(64);"`
 }
 
 func main() {
@@ -25,7 +28,24 @@ func main() {
 	// OneToManyTest()
 	// LinksTest()
 	// TestInsertOmit()
-	TestUpdateDifferentType()
+	// TestUpdateDifferentType()
+	TestSqlNullTime()
+}
+
+func TestSqlNullTime() {
+	var db = dao.GetDB()
+	// Migrate the schema
+	db.AutoMigrate(&Product{})
+	// var product = &Product{Name: "Alice", Price: 100, Expired: sql.NullTime{
+	// 	Time:  time.Now(),
+	// 	Valid: true,
+	// }}
+	// var err = db.Create(product).Error
+	// log.Println(err)
+	var products []Product
+	var result = db.Where("expired < ?", time.Now()).Find(&products)
+	log.Println(result.RowsAffected)
+	log.Println(pretty.Sprint(products))
 }
 
 type ScopeFunc func(db *gorm.DB) *gorm.DB
@@ -98,9 +118,3 @@ func HelloWorldTest() {
 	// Delete - delete product
 	db.Delete(&product, 1)
 }
-
-//func main() {
-//	// HelloWorldTest()
-//	// OneToManyTest()
-//	LinksTest()
-//}
