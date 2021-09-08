@@ -19,7 +19,7 @@ func TestQuery(t *testing.T) {
 		fmt.Println("Failed to connect to mysql,err:" + err.Error())
 		os.Exit(1)
 	}
-	//操作一：执行数据操作语句
+	// 操作一：执行数据操作语句
 
 	var insertSqlStr = "insert into students values (5, 'berry', 'berry@gmail.com')"
 	result, err := db.Exec(insertSqlStr) //执行SQL语句
@@ -30,7 +30,7 @@ func TestQuery(t *testing.T) {
 		fmt.Println("受影响的记录数是", n)
 	}
 
-	//操作二：执行预处理
+	// 操作二：执行预处理
 	/*
 	   stu:=[2][2] string{{"3","ketty"},{"4","rose"}}
 	   stmt,_:=db.Prepare("insert into students values (?,?)")      //获取预处理语句对象
