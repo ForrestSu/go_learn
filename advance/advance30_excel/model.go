@@ -4,10 +4,10 @@ package main
 const fileName = "白名单.xlsx"
 
 type ImportCpUser struct {
-	NickName string `xlsx:"column(昵称)"`
-	ID       string `xlsx:"column(id)"`
-	TagName  string `xlsx:"column(属性标签)"`
-	Price    int64  `xlsx:"column(报价)"`
+	NickName string `csv:"昵称"`
+	ID       string `csv:"id"`
+	TagName  string `csv:"标签"`
+	Price    int64  `csv:"报价"`
 }
 
 // GetXLSXSheetName sheet name

@@ -88,10 +88,10 @@ func PushTemplateMsg() {
 		Data: map[string]*message.TemplateDataItem{
 			"first":    {Value: "Hello"},      // 你好，会员卡序列码已送达！
 			"keyword1": {Value: "math"},       // 会员卡序列码: GTestPAAAAA1234
-			"keyword2": {Value: "100"},        // 会员卡类型: 腾讯视频会员月卡
+			"keyword2": {Value: "100"},        // 会员卡类型: 会员月卡
 			"keyword3": {Value: "20元"},        // 会员卡金额: 20元
 			"keyword4": {Value: "2021年3月18日"}, // 时间: 2021年3月18日
-			"remark":   {Value: "备注"},         // 备注: 请您前往腾讯视频-个人中心自助充值
+			"remark":   {Value: "备注"},         // 备注: 请您前往-个人中心自助充值
 		},
 	}
 	msgID, err := template.Send(pushMsg)

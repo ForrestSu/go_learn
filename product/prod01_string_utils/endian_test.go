@@ -2,8 +2,9 @@ package prod01_string_utils
 
 import (
 	"fmt"
-	endian "github.com/virtao/GoEndian"
 	"testing"
+
+	endian "github.com/virtao/GoEndian"
 )
 
 // 判断当前机器的大小端
