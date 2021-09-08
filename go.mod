@@ -23,10 +23,10 @@ require (
 	github.com/nats-io/nats.go v1.12.0
 	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
-	github.com/silenceper/wechat/v2 v2.0.5
+	github.com/silenceper/wechat/v2 v2.0.9-rc.1
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/smartystreets/goconvey v1.6.4
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.7.0
 	github.com/szyhf/go-excel v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	google.golang.org/protobuf v1.25.0 // indirect

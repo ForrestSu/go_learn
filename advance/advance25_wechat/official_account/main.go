@@ -13,13 +13,11 @@ import (
 	"github.com/silenceper/wechat/v2/officialaccount/message"
 )
 
+// 微信公众号-开发
+
 var officialAccount *officialaccount.OfficialAccount
 
 func InitWechat() {
-	/*
-		https://api.weixin.qq.com/sns/userinfo?access_token=42_el5DMp-axQsZ2qhvoL-yh9tCuv0nFDD9sInND29psWnMdBn9_F-kTZJtAWwzIMUfio_rHdQAjcBBOA7vID3a2YSPsUrRu1gKjDQb2ntZnKtbo5_dKiVtN3-iMQbbqD8iyLTbayAE6al7m7KmTKZeAHAZQF&openid=wx39c38462bc2ca067&lang=zh_CN
-	*/
-
 	memory := cache.NewMemory()
 	wc := wechat.NewWechat()
 	cfg := &offConfig.Config{
@@ -40,19 +38,19 @@ func GetToken() {
 		fmt.Printf("accessToken = %v\n", accessToken)
 	}
 
-	var redirectUrl = "https://survey.video.qq.com/v1/h5/login?redirect_url=%2Fv1%2Fh5%2Fhello"
+	var redirectURL = "https://survey.video.qq.com/v1/h5/login?redirect_url=%2Fv1%2Fh5%2Fhello"
 
-	url, _ := oauth.GetRedirectURL(redirectUrl, "snsapi_userinfo", "state")
+	url, _ := oauth.GetRedirectURL(redirectURL, "snsapi_userinfo", "state")
 	log.Println(url)
 
 	// oauth.GetUserAccessToken()
 
-	//openID := "openID"
-	//if userInfo, err := oauth.GetUserInfo(accessToken, openID, ""); err != nil {
-	//	fmt.Println(err)
-	//} else {
-	//	fmt.Printf("userInfo = %v\n", userInfo)
-	//}
+	// openID := "openID"
+	// if userInfo, err := oauth.GetUserInfo(accessToken, openID, ""); err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Printf("userInfo = %v\n", userInfo)
+	// }
 }
 
 // GetTemplateMsg 查询消息模板
@@ -77,14 +75,14 @@ func GetMaterial() {
 	pretty.Print(result)
 }
 
-// 发送模板消息
+// PushTemplateMsg 发送模板消息
 func PushTemplateMsg() {
 	var template = officialAccount.GetTemplate()
 	var templateID = "Li4GSGIxSkJC-wzk3YusSeh-SbtuOMwx2SjbeTpW21I"
 	var pushMsg = &message.TemplateMessage{
 		ToUser:     "o6A_q6pp-zdtd4UFmHI4Fl9aCaIY",
 		TemplateID: templateID,
-		//URL:        "",
+		// URL:        "",
 		Data: map[string]*message.TemplateDataItem{
 			"first":    {Value: "Hello"},      // 你好，会员卡序列码已送达！
 			"keyword1": {Value: "math"},       // 会员卡序列码: GTestPAAAAA1234
