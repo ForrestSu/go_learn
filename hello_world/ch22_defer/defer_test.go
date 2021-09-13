@@ -3,10 +3,12 @@ package ch22_defer
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func handler() error {
-	return fmt.Errorf("handler err")
+	return fmt.Errorf("handler err is abandon")
 }
 
 func Filter() (err error) {
@@ -22,5 +24,5 @@ func Filter() (err error) {
 
 func TestHello(t *testing.T) {
 	err := Filter()
-	t.Logf("%+v", err)
+	assert.Nil(t, err) // need err
 }
