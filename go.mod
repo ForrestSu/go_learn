@@ -7,7 +7,6 @@ require (
 	github.com/360EntSecGroup-Skylar/excelize/v2 v2.4.0
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/agiledragon/gomonkey/v2 v2.1.0
-	github.com/deckarep/golang-set v1.7.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
@@ -22,6 +21,7 @@ require (
 	github.com/nats-io/nats-server/v2 v2.4.0 // indirect
 	github.com/nats-io/nats.go v1.12.0
 	github.com/satori/go.uuid v1.2.0
+	github.com/panjf2000/ants/v2 v2.4.5
 	github.com/scylladb/go-set v1.0.2
 	github.com/silenceper/wechat/v2 v2.0.9-rc.1.0.20210908030323-96c1f98944e4
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e

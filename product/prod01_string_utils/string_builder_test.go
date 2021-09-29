@@ -50,6 +50,8 @@ func Benchmark_BytesBuffer(b *testing.B) {
 	}
 }
 
+// Benchmark_BytesBuffer_Grows
+// Benchmark_BytesBuffer_Grows-4   	 2072634	       586.9 ns/op
 func Benchmark_BytesBuffer_Grows(b *testing.B) {
 	uin := "3192695574"
 	qqMusicKey := "@DNNPx7IFA"
@@ -74,6 +76,8 @@ func Benchmark_BytesBuffer_Grows(b *testing.B) {
 	}
 }
 
+// Benchmark_StringBuilder
+// Benchmark_StringBuilder-4   	 2727388	       436.7 ns/op
 func Benchmark_StringBuilder(b *testing.B) {
 	uin := "3192695574"
 	qqMusicKey := "@DNNPx7IFA"
@@ -103,10 +107,12 @@ const (
 	// 旧的票据格式 eg: @DNNPx7IFA
 	TicketKeyPrefixOld = "@"
 )
+
 var (
 	uinTags = [...]string{"qqmusic_uin", "qq", "p_uin", "uin", "qm_keyst", "p_luin"}
 	keyTags = [...]string{"qqmusic_key", "authst", "p_skey", "skey", "lskey", "p_lskey"}
 )
+
 func handleCookies(uin string, musicKey string) string {
 	// 新的票据格式
 	if strings.HasPrefix(musicKey, TicketKeyPrefixQQ) || strings.HasPrefix(musicKey, TicketKeyPrefixWX) {
@@ -146,5 +152,3 @@ func Benchmark_StringBuilder_Grows(b *testing.B) {
 	}
 	// assert.Equal(t, expects, actual)
 }
-
-
