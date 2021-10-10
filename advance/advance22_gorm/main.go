@@ -5,7 +5,6 @@ import (
 	"errors"
 	"log"
 	"reflect"
-	"time"
 
 	"github.com/kylelemons/godebug/pretty"
 
@@ -21,6 +20,7 @@ type Product struct {
 	Price   uint64
 	Expired sql.NullTime
 	OpenID  string `gorm:"index; column:open_id; type:varchar(64);"`
+	QQ      int64
 }
 
 func main() {
@@ -42,10 +42,21 @@ func TestSqlNullTime() {
 	// }}
 	// var err = db.Create(product).Error
 	// log.Println(err)
-	var products []Product
-	var result = db.Where("expired < ?", time.Now()).Find(&products)
-	log.Println(result.RowsAffected)
-	log.Println(pretty.Sprint(products))
+	// {
+	// 	var products []Product
+	// 	var result = db.Where("expired < ?", time.Now()).Find(&products)
+	// 	log.Println(result.RowsAffected)
+	// 	log.Println(pretty.Sprint(products))
+	// }
+	{
+		var products []Product
+		var result = db.Where("(qq is NULL OR qq < ?)", 10000).
+			Where("id > 0").
+			Find(&products)
+		log.Println("records = ", result.RowsAffected)
+		log.Println(pretty.Sprint(products))
+	}
+
 }
 
 type ScopeFunc func(db *gorm.DB) *gorm.DB

@@ -11,7 +11,7 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
 	github.com/golang/mock v1.4.4
-	github.com/google/go-cmp v0.5.0
+	github.com/google/go-cmp v0.5.3
 	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.4.0
 	github.com/julienschmidt/httprouter v1.3.0
@@ -20,8 +20,8 @@ require (
 	github.com/mailru/easyjson v0.7.6
 	github.com/nats-io/nats-server/v2 v2.4.0 // indirect
 	github.com/nats-io/nats.go v1.12.0
-	github.com/satori/go.uuid v1.2.0
 	github.com/panjf2000/ants/v2 v2.4.5
+	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
 	github.com/silenceper/wechat/v2 v2.0.9-rc.1.0.20210908030323-96c1f98944e4
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
@@ -29,7 +29,7 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/szyhf/go-excel v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
-	google.golang.org/protobuf v1.25.0 // indirect
+	go.opencensus.io v0.23.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/mysql v1.0.5
