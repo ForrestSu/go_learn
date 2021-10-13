@@ -4,8 +4,8 @@
 *.test
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
-cover.cov
+# pprof
+*.prof
 
 advance/26_wechat/official_account/app_secret.txt
 advance/26_wechat/mini_program/app_secret.txt
