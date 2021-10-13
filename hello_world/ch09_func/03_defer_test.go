@@ -11,7 +11,7 @@ print 0
 print 3
 print 2
 print 1
- */
+*/
 func TestDefer(t *testing.T) {
 
 	fmt.Println("print 0")
@@ -23,12 +23,11 @@ func TestDefer(t *testing.T) {
 	fmt.Println("print 3")
 }
 
-func TestDeferFunc(t *testing.T){
-	defer func(){
+func TestDeferFunc(t *testing.T) {
+	defer func() {
 		t.Log("Clean resources.")
 	}()
 	t.Log("Started")
-	panic("Fatal error") //defer 仍会执行
-	//t.Log("aa") //unreachable code
+	panic("Fatal error") // defer 仍会执行
+	t.Log("aa")          // unreachable code
 }
-

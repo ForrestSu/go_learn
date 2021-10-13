@@ -2,7 +2,6 @@ package ch03_compare_loop_test
 
 import (
 	"testing"
-	"time"
 )
 
 // test for loop
@@ -12,13 +11,5 @@ func TestFor(t *testing.T) {
 	for n < 5 {
 		n++
 		t.Log("n == ", n)
-	}
-}
-
-// 测试死循环
-func TestForNoDie(t *testing.T) {
-	for {
-		println("hello")
-		time.Sleep(1000)
 	}
 }

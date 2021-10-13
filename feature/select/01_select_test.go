@@ -1,4 +1,4 @@
-package try_select
+package main
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 
 func TestEmptySelect(t *testing.T) {
 	// fatal error: all goroutines are asleep - deadlock!
-	select {}
+	// select {}
 }
 
 func TestChannelSelect(t *testing.T) {

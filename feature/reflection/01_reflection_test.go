@@ -46,7 +46,7 @@ func reflectStruct(p interface{}) {
 	}
 }
 
-//Clear is better than clever.  Reflection is never clear.
+// Clear is better than clever.  Reflection is never clear.
 func TestReflection(t *testing.T) {
 	o := order{
 		orderId:    10,

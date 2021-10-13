@@ -45,5 +45,5 @@ func main() {
 	TestTimer(ctx)
 
 	log.Println("will sleep...")
-	time.Sleep(15 * time.Second)
+	time.Sleep(10 * time.Second)
 }

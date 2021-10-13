@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func hello(done chan int) {
+func helloFunc(done chan int) {
 	fmt.Println("enter...")
 	time.Sleep(3 * time.Second)
 	fmt.Println("Hello world goroutine")
@@ -14,7 +14,7 @@ func hello(done chan int) {
 
 func main() {
 	done := make(chan int)
-	go hello(done)
+	go helloFunc(done)
 	notify := <-done
 	fmt.Println("main function ", notify, len(done))
 }
