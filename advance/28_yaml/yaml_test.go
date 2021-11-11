@@ -15,7 +15,7 @@ list_str:
   - a
   - "text"
   - 123
-timeout: 1ms
+timeout: 4m  # 4 minutes
 map_data: 
   2:
     title: 拾光-接单通知
@@ -42,10 +42,15 @@ type Template struct {
 	Content string `yaml:"content"` // 内容
 }
 
+// yaml 解析time.Duration类型, 是直接使用的标准库函数 time.ParseDuration()
+// 扩展 time.ParseDuration() 具体支持的时间单位如下：
+// Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+
 func TestYaml(t *testing.T) {
 	var cfg = &YamlConfig{}
 	err := yaml.Unmarshal([]byte(configInfo), cfg)
 	assert.Nil(t, err)
 
 	t.Log(pretty.Sprint(cfg))
+	assert.Equal(t, 4*time.Minute, cfg.Timeout)
 }

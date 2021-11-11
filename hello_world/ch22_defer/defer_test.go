@@ -1,4 +1,4 @@
-package ch22_defer
+package main
 
 import (
 	"fmt"
