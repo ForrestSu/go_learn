@@ -15,7 +15,7 @@ list_str:
   - a
   - "text"
   - 123
-timeout: 4m  # 4 minutes
+# timeout: 4m  # 4 minutes
 map_data: 
   2:
     title: 拾光-接单通知
@@ -23,6 +23,12 @@ map_data:
   3:
     title: 拾光-上传脚本通知
     content: 已确认接受任务（XXX），请及时上传脚本
+# TV 合作渠道免广
+# TV 合作渠道免广
+tv_channel:
+  16252: # 长虹电视
+    ad_types: []     # TL TV前贴 TH TV后贴
+    threshold: 3m30s   # 3 minutess
 `
 
 type YamlConfig struct {
@@ -34,6 +40,21 @@ type YamlConfig struct {
 	Timeout time.Duration `yaml:"timeout"`
 	// Map
 	MapData map[int32]*Template `yaml:"map_data"`
+	// Map duration
+	MapDuration map[int]TVManufacture `yaml:"tv_channel"`
+}
+
+// TVManufacture 合作厂商
+type TVManufacture struct {
+	// 免广的广告类型 (默认只有前贴)
+	AdTypes []string `yaml:"ad_types"`
+	// 免广的视频时长
+	Threshold time.Duration `yaml:"threshold"`
+}
+
+// 是否免广 (视频时长+广告类型)
+func (m *TVManufacture) freeAd(d time.Duration) bool {
+	return d > 0 && d <= m.Threshold
 }
 
 // Template 消息模板
@@ -48,9 +69,15 @@ type Template struct {
 
 func TestYaml(t *testing.T) {
 	var cfg = &YamlConfig{}
+	cfg.Timeout = 5 * time.Nanosecond
 	err := yaml.Unmarshal([]byte(configInfo), cfg)
 	assert.Nil(t, err)
 
 	t.Log(pretty.Sprint(cfg))
 	assert.Equal(t, 4*time.Minute, cfg.Timeout)
+
+	val := cfg.MapDuration[16252]
+	assert.Equal(t, 3*time.Minute+30*time.Second, val.Threshold)
+	// assert.True(t, val.freeAd(3*time.Minute))
+	// assert.False(t, val.freeAd(4*time.Minute))
 }
