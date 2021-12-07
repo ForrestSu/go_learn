@@ -143,7 +143,6 @@ func BenchmarkDecodeJson(b *testing.B) {
 	}
 }
 
-
 // easyjson decoded
 func BenchmarkDecodeEasyJson(b *testing.B) {
 	origin := NewAidCache()

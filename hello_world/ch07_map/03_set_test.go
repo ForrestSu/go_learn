@@ -21,7 +21,7 @@ func TestSetByMap(t *testing.T) {
 		t.Log("not existed!")
 	}
 	// 3 删除元素
-	delete(mySet,10)
+	delete(mySet, 10)
 
 	// 再次检查这个 元素是否存在
 	if mySet[10] {

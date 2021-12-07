@@ -45,7 +45,7 @@ func main() {
 			if ctx1.Err() != nil {
 				log.Printf("n == %d, ctx err=%+v\n", n, ctx1.Err())
 				if ctx1.Err() == context.DeadlineExceeded {
-					log.Println("equal DeadlineExceeded");
+					log.Println("equal DeadlineExceeded")
 				}
 			}
 		}(ctx, task)

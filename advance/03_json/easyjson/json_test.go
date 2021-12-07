@@ -1,6 +1,6 @@
 package proto
 
-import(
+import (
 	"encoding/json"
 	"fmt"
 	"testing"
@@ -19,7 +19,7 @@ var jsonStr = `{
 func TestEasyJSON(t *testing.T) {
 	emp := &Employee{}
 	err := emp.UnmarshalJSON([]byte(jsonStr))
-	if err != nil{
+	if err != nil {
 		t.Fatal("err:", err)
 	}
 	t.Log(emp)

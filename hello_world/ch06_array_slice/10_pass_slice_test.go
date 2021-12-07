@@ -25,8 +25,6 @@ func TestPassByValue(t *testing.T) {
 	fmt.Println("after passing to function ", num)
 }
 
-
-
 // 由于切片是共享存储，切片对象这里会copy一份，但是堆上的元素数组是shared的.
 func changeSlice(num []int) {
 	num[0] *= 10

@@ -21,9 +21,9 @@ func TestIfElse(t *testing.T) {
 
 // Go 支持两段的写法
 func TestIF(t *testing.T) {
-   if a:=1+1; a == 2 {
-   	 t.Log("multi statement!")
-   }
+	if a := 1 + 1; a == 2 {
+		t.Log("multi statement!")
+	}
 }
 
 /**

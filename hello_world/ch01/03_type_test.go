@@ -54,4 +54,3 @@ func TestExplicitTypeConvert(t *testing.T) {
 	var j = float64(i)
 	fmt.Println("j: ", j)
 }
-

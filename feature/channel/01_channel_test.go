@@ -1,45 +1,45 @@
 package main
 
 import (
-    "fmt"
-    "sync"
-    "testing"
-    "time"
+	"fmt"
+	"sync"
+	"testing"
+	"time"
 )
 
 var wg = sync.WaitGroup{}
 
 func Consumer0(ch chan int) {
-    iCount := 0
+	iCount := 0
 	for {
 		data, ok := <-ch
 		fmt.Println("ch0:", data)
-        if ok == false {
-            fmt.Println("channel 0 closed! iCount=", iCount)
-            break
-        }
-        iCount++
+		if ok == false {
+			fmt.Println("channel 0 closed! iCount=", iCount)
+			break
+		}
+		iCount++
 	}
 	wg.Done()
 }
 
 func Consumer1(ch chan int) {
-    iCount := 0
+	iCount := 0
 	for {
 		data, ok := <-ch
 		fmt.Println("ch1:", data)
 		if ok == false {
-            fmt.Println("channel 1 closed! iCount=", iCount)
+			fmt.Println("channel 1 closed! iCount=", iCount)
 			break
 		}
-        iCount++
+		iCount++
 	}
 	wg.Done()
 }
 
 func TestMultiConsumer(t *testing.T) {
 	ch := make(chan int)
-    wg.Add(2)
+	wg.Add(2)
 	go Consumer0(ch)
 	go Consumer1(ch)
 

@@ -7,6 +7,7 @@ import (
 
 type Animal struct {
 }
+
 func (a *Animal) speak() {
 	fmt.Println("animal...")
 }
@@ -19,6 +20,7 @@ type Dog struct {
 	Animal //is-a 匿名嵌套类型
 	//p *Pet
 }
+
 //隐藏父类同名方法
 func (d *Dog) speak() {
 	fmt.Println("Wang")

@@ -16,6 +16,7 @@ func returnMultiResult(length, width float64) (float64, float64) {
 	var perimeter = (length + width) * 2
 	return area, perimeter
 }
+
 // 01 测试多个返回值
 func TestFn(t *testing.T) {
 	area, _ := returnMultiResult(10, 20)

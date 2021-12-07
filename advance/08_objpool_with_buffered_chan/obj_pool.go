@@ -15,6 +15,7 @@ type ConnObj struct {
 type ObjPool struct {
 	bufChan chan *ConnObj
 }
+
 func NewObjPool(size int) *ObjPool {
 	pool := &ObjPool{}
 	pool.bufChan = make(chan *ConnObj, size)

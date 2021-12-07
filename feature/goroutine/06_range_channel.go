@@ -29,6 +29,6 @@ func main() {
 	number := 589
 	sqrch := make(chan int)
 	go calcSquares(number, sqrch)
-	data := <- sqrch
-	fmt.Println("Final output",data)
+	data := <-sqrch
+	fmt.Println("Final output", data)
 }

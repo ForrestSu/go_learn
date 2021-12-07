@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 /** go 语言还能发现运行时-死锁
- fatal error: all goroutines are asleep - deadlock!
- */
+fatal error: all goroutines are asleep - deadlock!
+*/
 func main() {
 	ch := make(chan string, 3)
 	ch <- "alice"

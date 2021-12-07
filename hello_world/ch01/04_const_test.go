@@ -6,9 +6,9 @@ import (
 )
 
 func TestConst(t *testing.T) {
-    const w = 10 // allow
-    // a = 11 // reassignment not allowed
-    fmt.Println("const a is ", w)
+	const w = 10 // allow
+	// a = 11 // reassignment not allowed
+	fmt.Println("const a is ", w)
 
 	fmt.Println("Hello, playground")
 	//var a = math.Sqrt(4) //allowed
@@ -21,8 +21,8 @@ func TestConst(t *testing.T) {
 }
 
 /**
- go 是一种强类型语言
- */
+go 是一种强类型语言
+*/
 func TestAliasType(t *testing.T) {
 	//var defaultName = "Sam" //allowed
 	// 这里是定义一个新类型，
@@ -52,7 +52,7 @@ func TestVar(t *testing.T) {
 	var int32Var int32 = a
 	var float64Var float64 = a
 	var complex64Var complex64 = a
-	fmt.Println("intVar",intVar, "\nint32Var", int32Var, "\nfloat64Var", float64Var, "\ncomplex64Var",complex64Var)
+	fmt.Println("intVar", intVar, "\nint32Var", int32Var, "\nfloat64Var", float64Var, "\ncomplex64Var", complex64Var)
 }
 
 // 数值常量可以在表达式中自由混合和匹配

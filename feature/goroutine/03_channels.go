@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 )
+
 // 创建一个 int 信道 channel
 func TestCreatChannel() {
 	var a chan int

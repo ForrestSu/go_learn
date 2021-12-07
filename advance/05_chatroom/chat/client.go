@@ -42,9 +42,9 @@ func CreateClient(conn net.Conn) *Client {
 		outgoing: make(Message),
 		reader:   reader,
 		writer:   writer,
-        exitFlag: make(chan net.Conn),
+		exitFlag: make(chan net.Conn),
 	}
-    client.StartPoll()
+	client.StartPoll()
 	return client
 }
 

@@ -12,17 +12,17 @@ func TestSerials(t *testing.T) {
 	e := &Employee{
 		Basic: BasicInfo{
 			Name: "sunquan",
-			Age: 27,
+			Age:  27,
 		},
 		Job: JobInfo{
-			Skills: []string{"java","c++", "golang"},
+			Skills: []string{"java", "c++", "golang"},
 		},
 	}
 	data, err := json.Marshal(e)
 	if err != nil {
 		t.Fatal("serial error:", err)
 	}
-	t.Logf("len %d, %s", len(data),  data)
+	t.Logf("len %d, %s", len(data), data)
 
 	//反序列化为对象
 	emp := &Employee{

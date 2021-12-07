@@ -15,5 +15,5 @@ func Sum(ops ...int) int {
 
 func TestVariadicParams(t *testing.T) {
 	//sum(1..5) = 15
-	t.Log(Sum(1,2,3,4,5))
+	t.Log(Sum(1, 2, 3, 4, 5))
 }

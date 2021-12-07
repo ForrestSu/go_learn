@@ -39,18 +39,18 @@ func TestSliceShareMemory(t *testing.T) {
 		"Aug", "Sep", "Oct", "Nov", "Dec"}
 	Q2 := year[3:6]
 	// [Apr May Jun] 3 9
-	t.Log(Q2, len(Q2),cap(Q2))
+	t.Log(Q2, len(Q2), cap(Q2))
 
 	// [Jun Jul Aug] 3 7
 	summer := year[5:8]
-	t.Log(summer, len(summer),cap(summer))
+	t.Log(summer, len(summer), cap(summer))
 
 	//"June" => "Unknown"
 	summer[0] = "Unknown"
 	t.Log(year)
 }
 
-func TestSliceCompare(t *testing.T){
+func TestSliceCompare(t *testing.T) {
 	/*a := []int {1,2,3}
 	b := []int {1,2,3}
 	// invalid operation: a == b (slice can only be compared to nil)

@@ -36,19 +36,19 @@ type AidCache struct {
 
 func NewAidCache() *AidCache {
 	return &AidCache{
-		Aid:          23,
-		TimeLen:      100,
-		AdBreak1:     11000,
-		AdBreak2:     11000,
-		AdBreak3:     3,
-		AdBreak4:     4,
-		AdBreak5:     5,
-		AdFlag:       0,
-		TypeId:       0,
-		ColumnId:     0,
-		IvbBreaks:    []uint32{1, 2, 3, 4, 5},
-		UploadQQ:     0,
-		WatchBuys:    []WatchBuy{{
+		Aid:       23,
+		TimeLen:   100,
+		AdBreak1:  11000,
+		AdBreak2:  11000,
+		AdBreak3:  3,
+		AdBreak4:  4,
+		AdBreak5:  5,
+		AdFlag:    0,
+		TypeId:    0,
+		ColumnId:  0,
+		IvbBreaks: []uint32{1, 2, 3, 4, 5},
+		UploadQQ:  0,
+		WatchBuys: []WatchBuy{{
 			Time:    1,
 			Product: 2,
 			Anchor:  3,

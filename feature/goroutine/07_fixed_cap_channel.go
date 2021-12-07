@@ -5,12 +5,12 @@ import (
 	"time"
 )
 
-func TestChannel(){
+func TestChannel() {
 	ch := make(chan string, 2)
 	ch <- "naveen"
 	ch <- "paul"
-	fmt.Println(<- ch)
-	fmt.Println(<- ch)
+	fmt.Println(<-ch)
+	fmt.Println(<-ch)
 }
 
 func Producer(ch chan int) {
@@ -21,8 +21,9 @@ func Producer(ch chan int) {
 	}
 	close(ch)
 }
+
 //注意；模拟一个慢速的消费者，当生产者发现 缓冲channel满是，则阻塞等待
-func RangeTravelChannel(){
+func RangeTravelChannel() {
 	ch := make(chan int, 2)
 	go Producer(ch)
 	time.Sleep(2 * time.Second)

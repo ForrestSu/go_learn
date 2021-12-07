@@ -21,4 +21,3 @@ func Diagonal(len, wid float64) float64 {
 	diagonal := math.Sqrt((len * len) + (wid * wid))
 	return diagonal
 }
-
