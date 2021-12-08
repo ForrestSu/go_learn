@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 // SecondTask 测试任务
-type SecondTask struct{}
+type secondTask struct{}
 
 // NewSecondTask new
-func NewSecondTask() *SecondTask {
-	return &SecondTask{}
+func NewSecondTask() *secondTask {
+	return &secondTask{}
 }
 
-func (t *SecondTask) Say() {
+func (t *secondTask) Say() {
 	fmt.Println("mock NewSecondTask()")
 }
