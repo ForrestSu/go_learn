@@ -5,6 +5,7 @@ import (
 	"errors"
 	"log"
 	"reflect"
+	"time"
 
 	"github.com/ForrestSu/go_learn/advance/24_gorm/dao"
 
@@ -20,6 +21,10 @@ type Product struct {
 	Expired sql.NullTime
 	OpenID  string `gorm:"index; column:open_id; type:varchar(64);"`
 	QQ      int64
+	// 金额
+	Money float64 `gorm:"type:decimal(20,2); not null; default:0; comment:业务收入"`
+	// 当前日期
+	CurDate time.Time `gorm:"default:CURRENT_TIMESTAMP(3);"`
 }
 
 func main() {
@@ -55,7 +60,6 @@ func TestSqlNullTime() {
 		log.Println("records = ", result.RowsAffected)
 		log.Println(pretty.Sprint(products))
 	}
-
 }
 
 type ScopeFunc func(db *gorm.DB) *gorm.DB
