@@ -18,5 +18,5 @@ func TestSingleton(t *testing.T) {
 	s := Singleton{}
 	copied := s
 	money := 1.02
-	t.Logf("%d, %v, %v\n", money, &s, &copied)
+	t.Logf("%v, %v, %v\n", money, &s, &copied)
 }
