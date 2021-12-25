@@ -1,4 +1,4 @@
-package reflection
+package reflect
 
 import (
 	"fmt"
@@ -33,7 +33,7 @@ func reflectStruct(p interface{}) {
 			fmt.Println("type:", element.Kind(), "value:", element)
 			switch element.Kind() {
 			case reflect.Int:
-				//提取对应的值，为对应的类型
+				// 提取对应的值，为对应的类型
 				id := element.Int()
 				fmt.Printf("===> is_int %T %d \n", id, id)
 			case reflect.String:
