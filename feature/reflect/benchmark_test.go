@@ -1,7 +1,9 @@
 package reflect
 
 import (
+	"fmt"
 	"reflect"
+	"strconv"
 	"testing"
 )
 
@@ -12,6 +14,22 @@ func judgeInt64(key int64) bool {
 }
 func judgeString(key string) bool {
 	return key != ""
+}
+
+var data = map[string]bool{
+	"100": true,
+	"102": true,
+}
+
+func init() {
+	for i := 0; i < 10000; i++ {
+		data[strconv.Itoa(i)] = true
+	}
+	fmt.Println("inited...")
+}
+
+func judgeMap(key string) bool {
+	return data[key]
 }
 
 func judgeReflect(key interface{}) bool {
@@ -27,6 +45,12 @@ func BenchmarkType(b *testing.B) {
 func BenchmarkString(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		judgeString("100")
+	}
+}
+
+func BenchmarkMapFind(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		judgeMap("100")
 	}
 }
 
