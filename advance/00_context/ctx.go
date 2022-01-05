@@ -6,7 +6,8 @@ import (
 	"time"
 )
 
-// ctx 作用：用来做超时控制
+// context 主要作用是用来做 Cancel
+// context 本质是一个 tree 的结构，当前节点的cancel信号会传递到其下的所有子节点
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())

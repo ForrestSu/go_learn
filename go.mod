@@ -29,6 +29,7 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/szyhf/go-excel v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
+	github.com/xuri/excelize/v2 v2.5.0
 	go.opencensus.io v0.23.0
 	golang.org/x/time v0.0.0-20200416051211-89c76fbcd5d1
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
