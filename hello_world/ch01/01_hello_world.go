@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	var test string
@@ -8,4 +10,7 @@ func main() {
 		fmt.Println("string test is empty !")
 	}
 	fmt.Println("hello world!")
+	// deadlock!
+	done := make(chan bool)
+	<-done
 }

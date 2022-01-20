@@ -54,8 +54,14 @@ func BenchmarkMapFind(b *testing.B) {
 	}
 }
 
-func BenchmarkReflect(b *testing.B) {
+func BenchmarkReflectIsZero(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		judgeReflect(100)
+	}
+}
+
+func BenchmarkStrToInt(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_, _ = strconv.Atoi("100")
 	}
 }
