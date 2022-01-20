@@ -8,6 +8,7 @@ require (
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/agiledragon/gomonkey/v2 v2.1.0
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
+	github.com/fsnotify/fsnotify v1.5.1
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
 	github.com/golang/mock v1.4.4
