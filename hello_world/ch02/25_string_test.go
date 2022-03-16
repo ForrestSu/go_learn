@@ -1,6 +1,10 @@
 package ch02_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 // Go语言里面，字符串为值类型
 func TestString(t *testing.T) {
@@ -8,6 +12,5 @@ func TestString(t *testing.T) {
 	if s == "" {
 		t.Log("a == <" + s + ">")
 	}
-	// len == 0
-	t.Log("len(s) == ", len(s))
+	assert.True(t, len(s) == 0)
 }

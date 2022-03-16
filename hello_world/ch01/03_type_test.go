@@ -22,8 +22,8 @@ func TestInt(t *testing.T) {
 	var a int = 89
 	b := 95
 	fmt.Println("value of a is", a, "and b is", b)
-	fmt.Printf("type of a is %T, size of a is %d \n", a, unsafe.Sizeof(a)) //type and size of a
-	fmt.Printf("type of b is %T, size of b is %d \n", b, unsafe.Sizeof(b)) //type and size of b
+	fmt.Printf("type of a is %T, size of a is %d \n", a, unsafe.Sizeof(a)) // type and size of a
+	fmt.Printf("type of b is %T, size of b is %d \n", b, unsafe.Sizeof(b)) // type and size of b
 }
 
 func TestComplex(t *testing.T) {
@@ -38,8 +38,8 @@ func TestComplex(t *testing.T) {
 // go don't do auto convert type
 func TestTypeAutoConvert(t *testing.T) {
 	// if define variable and don't use it, that an error!!
-	i := 15   //int
-	j := 17.8 //float64
+	i := 15   // int
+	j := 17.8 // float64
 	// sum := i + j //int + float64 not allowed
 	fmt.Printf("j type is %T \n", j)
 

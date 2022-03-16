@@ -11,8 +11,8 @@ func TestConst(t *testing.T) {
 	fmt.Println("const a is ", w)
 
 	fmt.Println("Hello, playground")
-	//var a = math.Sqrt(4) //allowed
-	//const b = math.Sqrt(4) //not allowed
+	// var a = math.Sqrt(4) //allowed
+	// const b = math.Sqrt(4) //not allowed
 
 	var name = "Sam"
 	fmt.Printf("type %T value %v\n", name, name)
@@ -24,17 +24,17 @@ func TestConst(t *testing.T) {
 go 是一种强类型语言
 */
 func TestAliasType(t *testing.T) {
-	//var defaultName = "Sam" //allowed
+	// var defaultName = "Sam" //allowed
 	// 这里是定义一个新类型，
 	type myString string
 
 	// 不可以用 等效的类型 直接赋值
-	//var name myString = string("Sam") //not allowed
+	// var name myString = string("Sam") //not allowed
 
-	//fmt.Println("name =", name)
+	// fmt.Println("name =", name)
 	// 但是可以强制转换
-	var customName myString = myString(string("Sam")) //allowed
-	//customName = defaultName //not allowed
+	var customName myString = myString(string("Sam")) // allowed
+	// customName = defaultName //not allowed
 
 	fmt.Printf("=>> type %T value %v\n", customName, customName)
 }
@@ -54,5 +54,3 @@ func TestVar(t *testing.T) {
 	var complex64Var complex64 = a
 	fmt.Println("intVar", intVar, "\nint32Var", int32Var, "\nfloat64Var", float64Var, "\ncomplex64Var", complex64Var)
 }
-
-// 数值常量可以在表达式中自由混合和匹配
