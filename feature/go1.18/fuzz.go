@@ -21,7 +21,8 @@ func main() {
 	input := "The quick brown fox jumped over the lazy dog"
 	rev, _ := Reverse(input)
 	doubleRev, _ := Reverse(rev)
+	var make = "ss"
 	fmt.Printf("original: %q\n", input)
 	fmt.Printf("reversed: %q\n", rev)
-	fmt.Printf("reversed again: %q\n", doubleRev)
+	fmt.Printf("reversed again: %s, %q\n", make, doubleRev)
 }
