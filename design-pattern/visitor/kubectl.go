@@ -7,6 +7,9 @@ import (
 
 type VisitorFunc func(*Info, error) error
 
+// Visitor
+// 这个模式是一种将算法与操作对象的结构分离的一种方法。
+// 这种分离的实际结果是能够在不修改结构的情况下向现有对象结构添加新操作，是遵循开放/封闭原则的一种方法
 type Visitor interface {
 	Visit(VisitorFunc) error
 }
