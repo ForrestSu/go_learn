@@ -3,7 +3,7 @@ package main
 import (
 	"io"
 
-	"github.com/360EntSecGroup-Skylar/excelize/v2"
+	"github.com/xuri/excelize/v2"
 )
 
 // ReadExcel 解析excel数据为二维数组

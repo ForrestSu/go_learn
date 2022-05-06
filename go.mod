@@ -4,7 +4,6 @@ go 1.16
 
 require (
 	bou.ke/monkey v1.0.2
-	github.com/360EntSecGroup-Skylar/excelize/v2 v2.4.0
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/agiledragon/gomonkey/v2 v2.1.0
 	github.com/bilibili/gengine v1.5.7
@@ -13,7 +12,7 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
 	github.com/golang/mock v1.4.4
-	github.com/google/go-cmp v0.5.3
+	github.com/google/go-cmp v0.5.8
 	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.4.0
 	github.com/julienschmidt/httprouter v1.3.0

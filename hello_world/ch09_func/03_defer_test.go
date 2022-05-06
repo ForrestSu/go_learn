@@ -25,6 +25,9 @@ func TestDefer(t *testing.T) {
 
 func TestDeferFunc(t *testing.T) {
 	defer func() {
+		if err := recover(); err != nil {
+			t.Log("got panic...")
+		}
 		t.Log("Clean resources.")
 	}()
 	t.Log("Started")

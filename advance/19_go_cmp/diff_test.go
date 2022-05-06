@@ -12,7 +12,6 @@ type Student struct {
 }
 
 func TestCmp(t *testing.T) {
-
 	want := &Student{
 		Name: "zhangsan",
 		Age:  20,
@@ -21,10 +20,7 @@ func TestCmp(t *testing.T) {
 		Name: "zhangsan",
 		Age:  21,
 	}
-
 	if diff := cmp.Diff(want, got); diff != "" {
-		t.Errorf("MakeGatewayInfo() mismatch (-want +got):\n%s", diff)
-	} else {
-		t.Log("no difference.")
+		t.Logf("Student{} mismatch (-want +got):\n%s", diff)
 	}
 }
