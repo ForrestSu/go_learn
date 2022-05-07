@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-// StructToMap 将结果编码为 map
+// StructToMap 将 struct 值编码为 map
 func StructToMap(data interface{}) map[string]string {
 	reflectValue := reflect.ValueOf(data)
 	if reflectValue.Kind() == reflect.Ptr {

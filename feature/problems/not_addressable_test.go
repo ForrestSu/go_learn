@@ -18,7 +18,7 @@ func (b *ByteSlice) pointerFunc() {
 func TestValueCall(t *testing.T) {
 	const b ByteSlice = 123
 	// t.Logf("%T", b)
-	b.valueFunc() //ok
+	b.valueFunc() // ok
 	// 不可寻址的值对象，不能调用指针方法
-	b.pointerFunc() //error
+	b.pointerFunc() // error
 }

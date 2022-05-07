@@ -5,10 +5,12 @@ import (
 )
 
 func main() {
-	var test string
-	if test == "" {
-		fmt.Println("string test is empty !")
-	}
+	deadLock()
+	// os.Exit(-1)
+}
+
+// deadLock is a deadlock function
+func deadLock() {
 	fmt.Println("hello world!")
 	// deadlock!
 	done := make(chan bool)

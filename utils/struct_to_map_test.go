@@ -1,35 +1,45 @@
 package utils
 
 import (
-	"encoding/json"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-var info = struct {
-	Age        int      `json:"age"`
-	EmptySlice []string `json:"empty_slice"`
-	Name       string   `json:"name"`
-	Slice      []string `json:"slice"`
-}{
-	Name:  "test",
-	Age:   10,
-	Slice: []string{"a", "b", "c"},
-}
-
 func TestStructToMap(t *testing.T) {
-	val := StructToMap(&info)
-	data, err := json.Marshal(val)
-	assert.Nil(t, err)
-	expect := `{"age":"10","empty_slice":"[]","name":"test","slice":"[\"a\",\"b\",\"c\"]"}`
-	assert.Equal(t, expect, string(data))
-}
-
-// BenchmarkStructToMap
-// BenchmarkStructToMap-12 1396696  859.0 ns/op   424 B/op   9 allocs/op
-func BenchmarkStructToMap(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		StructToMap(&info)
+	tests := []struct {
+		name string
+		in   interface{}
+		want map[string]string
+	}{
+		{name: "string",
+			in: &struct {
+				Name string `json:"name"`
+			}{Name: "John"},
+			want: map[string]string{"name": "John"},
+		},
+		{name: "age",
+			in: struct {
+				Age int `json:"age"`
+			}{Age: 10},
+			want: map[string]string{"age": "10"},
+		},
+		{name: "slice",
+			in: struct {
+				Slice []string `json:"slice"`
+			}{Slice: []string{"a", "b", "c"}},
+			want: map[string]string{"slice": "[\"a\",\"b\",\"c\"]"},
+		},
+		{name: "nil slice",
+			in: struct {
+				NilSlice []string `json:"nil_slice"`
+			}{},
+			want: map[string]string{"nil_slice": "[]"},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equalf(t, tt.want, StructToMap(tt.in), "StructToMap(%v)", tt.in)
+		})
 	}
 }

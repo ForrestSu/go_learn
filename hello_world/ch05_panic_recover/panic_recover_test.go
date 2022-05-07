@@ -18,8 +18,8 @@ func TestRecover(t *testing.T) {
 }
 
 // 无法捕获
+/*
 func TestNotRecover(t *testing.T) {
-
 	defer func() {
 		if err := recover(); err != nil {
 			fmt.Printf("has panic() = %+v!\n", err)
@@ -32,3 +32,4 @@ func TestNotRecover(t *testing.T) {
 		panic("hhh")
 	}()
 }
+*/
