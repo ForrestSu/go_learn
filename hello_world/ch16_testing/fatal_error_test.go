@@ -3,9 +3,7 @@ package ch16_testing
 import "testing"
 
 func TestOK(t *testing.T) {
-	t.Log("begin...")
-	t.Log("ok!")
-	t.Log("end.")
+	t.Log("hello world")
 }
 
 /*
