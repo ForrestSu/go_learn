@@ -13,11 +13,11 @@ type Student struct {
 
 func TestCmp(t *testing.T) {
 	want := &Student{
-		Name: "zhangsan",
+		Name: "Bob",
 		Age:  20,
 	}
 	got := &Student{
-		Name: "zhangsan",
+		Name: "Bob",
 		Age:  21,
 	}
 	if diff := cmp.Diff(want, got); diff != "" {
