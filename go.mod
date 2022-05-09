@@ -19,8 +19,8 @@ require (
 	github.com/kr/pretty v0.2.1
 	github.com/kylelemons/godebug v1.1.0
 	github.com/mailru/easyjson v0.7.6
-	github.com/nats-io/nats-server/v2 v2.4.0 // indirect
-	github.com/nats-io/nats.go v1.12.0
+	github.com/nats-io/nats-server/v2 v2.8.2 // indirect
+	github.com/nats-io/nats.go v1.14.0
 	github.com/panjf2000/ants/v2 v2.4.5
 	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
@@ -33,7 +33,7 @@ require (
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.5.0
 	go.opencensus.io v0.23.0
-	golang.org/x/time v0.0.0-20200416051211-89c76fbcd5d1
+	golang.org/x/time v0.0.0-20211116232009-f0f3c7e86c11
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/mysql v1.0.5
