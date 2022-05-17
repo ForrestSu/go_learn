@@ -12,9 +12,11 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
 	github.com/golang/mock v1.4.4
+	github.com/golang/protobuf v1.4.3
 	github.com/google/go-cmp v0.5.8
 	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.4.0
+	github.com/json-iterator/go v1.1.12
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kr/pretty v0.2.1
 	github.com/kylelemons/godebug v1.1.0
@@ -34,6 +36,7 @@ require (
 	github.com/xuri/excelize/v2 v2.5.0
 	go.opencensus.io v0.23.0
 	golang.org/x/time v0.0.0-20211116232009-f0f3c7e86c11
+	google.golang.org/protobuf v1.25.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/mysql v1.0.5

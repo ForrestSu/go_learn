@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package test.echo;
+//option go_package="github.com/ForrestSu/go_learn/advance/stub/echo";
+option go_package="stub/echo";
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message WechatPay {
+    int64 id = 1;
+    string name = 2;
+}
+
+message HelloRequest {
+    string msg = 1;
+    oneof one_of_pay {
+        string noop = 2;
+        WechatPay wx = 3;
+    }
+}
+
+message HelloReply {
+    string msg = 1;
+}

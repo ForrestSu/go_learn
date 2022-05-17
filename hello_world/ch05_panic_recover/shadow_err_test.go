@@ -13,7 +13,7 @@ func mockErr() (int, error) {
 }
 
 func caseShadow() (err error) {
-	// 不会重新定义 err
+	// 不会重新定义一个 err
 	val, err := mockErr()
 	log.Println(val, err)
 	return
@@ -21,7 +21,7 @@ func caseShadow() (err error) {
 
 func caseNotBeShadow() (err error) {
 	if true {
-		// 重新定义 err
+		// 新定义一个 err 变量
 		val, err := mockErr()
 		log.Println(val, err)
 	}
