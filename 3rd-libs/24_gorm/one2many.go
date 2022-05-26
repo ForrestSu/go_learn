@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/ForrestSu/go_learn/advance/24_gorm/dao"
+	"github.com/ForrestSu/go_learn/3rd-libs/24_gorm/dao"
 	"github.com/kylelemons/godebug/pretty"
 	"gorm.io/gorm"
 )

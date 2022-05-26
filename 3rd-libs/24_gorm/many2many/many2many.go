@@ -6,7 +6,7 @@ import (
 	"github.com/kylelemons/godebug/pretty"
 	"gorm.io/gorm"
 
-	"github.com/ForrestSu/go_learn/advance/24_gorm/dao"
+	"github.com/ForrestSu/go_learn/3rd-libs/24_gorm/dao"
 )
 
 // 多对多-关系

@@ -6,7 +6,7 @@ import (
 	"reflect"
 
 	"bou.ke/monkey"
-	"github.com/ForrestSu/go_learn/advance/20_reflect/dao"
+	"github.com/ForrestSu/go_learn/3rd-libs/20_reflect/dao"
 )
 
 // just fake a UnExported struct: *dao.student
@@ -19,13 +19,13 @@ func WrapperInvoke(target reflect.Type, methodName string, innerFunc interface{}
 		// fmt.Printf("wrapper fn ....")
 		return reflect.ValueOf(innerFunc).Call(in[1:])
 
-		//if len(in) != m.Func.Type().NumIn() {
+		// if len(in) != m.Func.Type().NumIn() {
 		//	panic(fmt.Sprintf("Arguments len(in) = %d is invalid!", len(in)))
-		//}
-		//ctx, _ := in[1].Interface().(context.Context)
-		//err := innerFn(ctx, in[2].Interface(), in[3].Interface())
-		////
-		//return []reflect.Value{reflect.ValueOf(err)}
+		// }
+		// ctx, _ := in[1].Interface().(context.Context)
+		// err := innerFn(ctx, in[2].Interface(), in[3].Interface())
+		// //
+		// return []reflect.Value{reflect.ValueOf(err)}
 	})
 	return wrapper.Interface()
 }

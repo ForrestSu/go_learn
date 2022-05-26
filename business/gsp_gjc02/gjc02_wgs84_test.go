@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"github.com/ForrestSu/go_learn/advance/gsp_gjc02/transform"
+	"github.com/ForrestSu/go_learn/business/gsp_gjc02/transform"
 )
 
 // https://www.zhihu.com/question/26112618

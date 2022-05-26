@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/ForrestSu/go_learn/advance/24_gorm/dao"
+	"github.com/ForrestSu/go_learn/3rd-libs/24_gorm/dao"
 	"github.com/kylelemons/godebug/pretty"
 	"gorm.io/gorm"
 )
@@ -32,16 +32,16 @@ func LinksTest() {
 	var db = dao.GetDB()
 
 	// Migrate the schema
-	//db.AutoMigrate(&User{}, &Role{})
+	// db.AutoMigrate(&User{}, &Role{})
 
-	//db.Create(&User{Name: "王五", Role: Role{Name: "终端用户"}})
+	// db.Create(&User{Name: "王五", Role: Role{Name: "终端用户"}})
 	// db.Create(&User{Name: "李四", RoleID: 1})
-	//var user1 User
-	//db.Where("id = ?", "1").First(&user1)
+	// var user1 User
+	// db.Where("id = ?", "1").First(&user1)
 	//
-	//// 关联的关键代码
-	//db.Model(&user1).Association("Role").Find(&user1.Role)
-	//log.Println(pretty.Sprint(user1))
+	// // 关联的关键代码
+	// db.Model(&user1).Association("Role").Find(&user1.Role)
+	// log.Println(pretty.Sprint(user1))
 
 	// find all
 	log.Println("=====")

@@ -5,7 +5,7 @@ import (
 
 	"google.golang.org/protobuf/encoding/protojson"
 
-	pb "github.com/ForrestSu/go_learn/advance/36_protobuf/stub/echo"
+	pb "github.com/ForrestSu/go_learn/3rd-libs/36_protobuf/stub/echo"
 
 	jsoniter "github.com/json-iterator/go"
 )

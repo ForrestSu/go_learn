@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ForrestSu/go_learn/advance/05_chatroom/chat"
+	"github.com/ForrestSu/go_learn/3rd-libs/05_chatroom/chat"
 )
 
 //go:generate ./chatserver  172.17.0.2:8000

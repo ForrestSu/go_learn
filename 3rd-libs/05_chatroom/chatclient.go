@@ -7,7 +7,7 @@ import (
 	"net"
 	"os"
 
-	"github.com/ForrestSu/go_learn/advance/05_chatroom/chat"
+	"github.com/ForrestSu/go_learn/3rd-libs/05_chatroom/chat"
 )
 
 //go:generate ./chatclient 172.17.0.2:8000

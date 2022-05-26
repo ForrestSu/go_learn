@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/ForrestSu/go_learn/advance/24_gorm/dao"
+	"github.com/ForrestSu/go_learn/3rd-libs/24_gorm/dao"
 
 	"github.com/kylelemons/godebug/pretty"
 	"gorm.io/gorm"
@@ -69,9 +69,9 @@ func TestUpdateDifferentType() {
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
 
-	//var product = &Product{Name: "D42", Price: 100}
+	// var product = &Product{Name: "D42", Price: 100}
 	// db.Create(product)
-	//db.Model(&product).Update("Price", "100")
+	// db.Model(&product).Update("Price", "100")
 	// 注意：虽然sql支持为int类型的列，更新时使用string 类型的值；
 	// 但还是建议
 	var ret = &Product{}
@@ -93,9 +93,9 @@ func TestInsertOmit() {
 	var db = dao.GetDB()
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
-	//var filter = func(db *gorm.DB) *gorm.DB {
+	// var filter = func(db *gorm.DB) *gorm.DB {
 	//	return db.Omit("text", "code")
-	//}
+	// }
 	var omitFields []string
 	db.Omit(omitFields...).Create(&Product{Name: "sunquan", Price: 100})
 }

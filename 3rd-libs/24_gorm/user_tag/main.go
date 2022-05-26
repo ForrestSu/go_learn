@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/ForrestSu/go_learn/advance/24_gorm/dao"
+	"github.com/ForrestSu/go_learn/3rd-libs/24_gorm/dao"
 	"github.com/scylladb/go-set/uset"
 )
 
@@ -31,13 +31,13 @@ func QueryUsers() {
 	// 2 把不同category_id 用户组做 mapreduce,  最后获取用户组中计数值 == category_id总数的用户
 	// 3 获取userID 列表，走正常的 in 查询规则
 
-	//var sets []*strset.Set
-	//for _, group := range groups {
+	// var sets []*strset.Set
+	// for _, group := range groups {
 	//	sets = append(sets, group.UserIDs.Data)
-	//}
-	//var selectUserIDs = strset.Intersection(sets...)
+	// }
+	// var selectUserIDs = strset.Intersection(sets...)
 	//
-	//log.Printf("select userID = %+v\n", selectUserIDs.List())
+	// log.Printf("select userID = %+v\n", selectUserIDs.List())
 }
 
 func Solve(records []UserTag) {
