@@ -72,7 +72,7 @@ func BenchmarkQuery(b *testing.B) {
 	// start test
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		rows, _ := db.Query("select * from students") // 获取所有数据
+		rows, _ := db.Query(`select * from students`) // 获取所有数据
 		rows.Close()
 	}
 	b.StopTimer()

@@ -36,6 +36,7 @@ require (
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.5.0
 	go.opencensus.io v0.23.0
+	golang.org/x/sync v0.0.0-20220513210516-0976fa681c29 // indirect
 	golang.org/x/time v0.0.0-20211116232009-f0f3c7e86c11
 	google.golang.org/protobuf v1.25.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
