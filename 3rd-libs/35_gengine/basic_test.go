@@ -2,13 +2,13 @@ package test
 
 import (
 	"fmt"
+	"log"
 	"testing"
 	"time"
 
 	"github.com/bilibili/gengine/builder"
 	"github.com/bilibili/gengine/context"
 	"github.com/bilibili/gengine/engine"
-	"github.com/sirupsen/logrus"
 )
 
 // 定义想要注入的结构体
@@ -36,7 +36,7 @@ rule "name test" "i can"  salience 0
 begin
 		if 7 == User.GetNum(7){
 			User.Age = User.GetNum(89767) + 10000000
-			User.Print("6666")
+			// User.Print("6666")
 		}else{
 			User.Name = "yyyy"
 		}
@@ -57,27 +57,23 @@ func Test_Multi(t *testing.T) {
 	// init rule engine
 	ruleBuilder := builder.NewRuleBuilder(dataContext)
 
-	start1 := time.Now().UnixNano()
+	start1 := time.Now()
 	// 构建规则
 	err := ruleBuilder.BuildRuleFromString(rule1) // string(bs)
-	end1 := time.Now().UnixNano()
-
-	logrus.Infof("rules num:%d, load rules cost time:%d", len(ruleBuilder.Kc.RuleEntities), end1-start1)
-
+	log.Printf("rules num:%d, load rules cost time:%v", len(ruleBuilder.Kc.RuleEntities), time.Since(start1))
 	if err != nil {
-		logrus.Errorf("err:%s ", err)
-	} else {
-		eng := engine.NewGengine()
-
-		start := time.Now().UnixNano()
-		// 执行规则
-		err := eng.Execute(ruleBuilder, true)
-		println(user.Age)
-		end := time.Now().UnixNano()
-		if err != nil {
-			logrus.Errorf("execute rule error: %v", err)
-		}
-		logrus.Infof("execute rule cost %d ns", end-start)
-		logrus.Infof("user.Age=%d,Name=%s,Male=%t", user.Age, user.Name, user.Male)
+		panic(err)
 	}
+
+	eng := engine.NewGengine()
+
+	start := time.Now()
+	// 执行规则
+	err = eng.Execute(ruleBuilder, true)
+	println(user.Age)
+	if err != nil {
+		log.Printf("execute rule error: %v", err)
+	}
+	log.Printf("execute rule cost %v \n", time.Since(start))
+	log.Printf("user.Age=%d,Name=%s,Male=%t \n", user.Age, user.Name, user.Male)
 }
