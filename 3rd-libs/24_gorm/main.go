@@ -24,7 +24,11 @@ type Product struct {
 	// 金额
 	Money float64 `gorm:"type:decimal(20,2); not null; default:0; comment:业务收入"`
 	// 当前日期
-	CurDate time.Time `gorm:"default:CURRENT_TIMESTAMP(3);"`
+	CurDate time.Time `gorm:"default:CURRENT_TIMESTAMP(3)"`
+}
+
+func (p *Product) TableName() string {
+	return "t_product"
 }
 
 func main() {

@@ -2,36 +2,46 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"io"
 	"net/http"
 
 	"golang.org/x/sync/errgroup"
 )
 
+// 任务信息
+type taskInfo struct {
+	URL string
+	rsp []byte
+	err error
+}
+
 func main() {
-	g := errgroup.Group{}
-	var urls = []string{
-		"http://www.golang.org/",
-		"http://www.google.com/",
-		"http://www.somestupidname.com/",
+	tasks := []taskInfo{
+		{URL: "http://www.golang.org/"},
+		{URL: "http://www.google.com/"},
+		{URL: "http://www.somestupidname.com/"},
 	}
-	for _, url := range urls {
-		// Launch a goroutine to fetch the URL.
-		url := url // https://golang.org/doc/faq#closures_and_goroutines
-		g.Go(func() error {
-			// Fetch the URL.
-			resp, err := http.Get(url)
-			if err == nil {
-				resp.Body.Close()
-				log.Printf("%s: %v\n", url, resp.StatusCode)
-			} else {
-				fmt.Println("Error:", err)
-			}
-			return err
-		})
+	g := errgroup.Group{}
+	for i := range tasks {
+		func(task *taskInfo) {
+			g.Go(func() error {
+				// Fetch the URL.
+				rsp, err := http.Get(task.URL)
+				task.err = err
+				if err != nil {
+					fmt.Printf("err: %v\n", err)
+					return err
+				}
+				defer rsp.Body.Close()
+				task.rsp, task.err = io.ReadAll(rsp.Body)
+				fmt.Printf("ulr %v, OK!  body len= %v\n", task.URL, len(task.rsp))
+				return err
+			})
+		}(&tasks[i])
 	}
 	// Wait for all HTTP fetches to complete.
-	if err := g.Wait(); err == nil {
-		fmt.Println("Successfully fetched all URLs.")
+	if err := g.Wait(); err != nil {
+		fmt.Printf("err: %v\n", err)
 	}
+
 }
