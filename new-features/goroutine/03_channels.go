@@ -14,6 +14,6 @@ func TestCreatChannel() {
 		fmt.Printf("Type of a is <%T> %d", a, len(a))
 	}
 }
-func main() {
+func TestChannel2() {
 	TestCreatChannel()
 }
