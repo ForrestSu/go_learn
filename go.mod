@@ -20,6 +20,7 @@ require (
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kr/pretty v0.2.1
 	github.com/kylelemons/godebug v1.1.0
+	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mailru/easyjson v0.7.6
 	github.com/nats-io/nats.go v1.14.0
 	github.com/panjf2000/ants/v2 v2.4.5
