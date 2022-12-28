@@ -3,8 +3,6 @@ package main
 import (
 	"fmt"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func handler() error {
@@ -23,6 +21,23 @@ func Filter() (err error) {
 }
 
 func TestHello(t *testing.T) {
-	err := Filter()
-	assert.Nil(t, err) // need err
+	// err := Filter()
+	// assert.Nil(t, err) // need err
+	hello(2)
+}
+
+func hello(k int) {
+	if k == 0 {
+		fmt.Println("k is 0")
+		return
+	}
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("recover")
+		}
+		fmt.Printf("defer \n")
+	}()
+	go func() {
+		panic("panic")
+	}()
 }

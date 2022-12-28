@@ -2,6 +2,7 @@ package syncpool_test
 
 import (
 	"fmt"
+	"runtime"
 	"sync"
 	"testing"
 )
@@ -36,7 +37,7 @@ func TestSyncPoolV2(t *testing.T) {
 	p.Put(3)
 	p.Put(4)
 
-	//runtime.GC()
+	runtime.GC()
 	for i := 0; i < 5; i++ {
 		fmt.Println(p.Get())
 	}

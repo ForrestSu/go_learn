@@ -1,6 +1,7 @@
 package yaml_test
 
 import (
+	"strconv"
 	"testing"
 	"time"
 
@@ -80,4 +81,11 @@ func TestYaml(t *testing.T) {
 	assert.Equal(t, 3*time.Minute+30*time.Second, val.Threshold)
 	// assert.True(t, val.freeAd(3*time.Minute))
 	// assert.False(t, val.freeAd(4*time.Minute))
+}
+
+func TestAtoi(t *testing.T) {
+	_, err := strconv.Atoi("")
+	t.Log(err)
+
+	assert.NotNil(t, err)
 }
