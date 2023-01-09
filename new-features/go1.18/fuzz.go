@@ -17,7 +17,7 @@ func Reverse(s string) (string, error) {
 	return string(b), nil
 }
 
-func main() {
+func main2() {
 	input := "The quick brown fox jumped over the lazy dog"
 	rev, _ := Reverse(input)
 	doubleRev, _ := Reverse(rev)
