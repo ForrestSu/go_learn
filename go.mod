@@ -22,7 +22,7 @@ require (
 	github.com/kylelemons/godebug v1.1.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mailru/easyjson v0.7.6
-	github.com/nats-io/nats.go v1.14.0
+	github.com/nats-io/nats.go v1.22.1
 	github.com/panjf2000/ants/v2 v2.4.5
 	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
@@ -37,7 +37,7 @@ require (
 	github.com/xuri/excelize/v2 v2.5.0
 	go.opencensus.io v0.23.0
 	golang.org/x/sync v0.0.0-20220513210516-0976fa681c29
-	golang.org/x/time v0.0.0-20211116232009-f0f3c7e86c11
+	golang.org/x/time v0.0.0-20220922220347-f3bd1da661af
 	google.golang.org/protobuf v1.28.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gopkg.in/yaml.v3 v3.0.1
@@ -70,7 +70,7 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
-	github.com/nats-io/nats-server/v2 v2.8.2 // indirect
+	github.com/nats-io/nats-server/v2 v2.9.11 // indirect
 	github.com/nats-io/nkeys v0.3.0 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -85,8 +85,8 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/szyhf/go-convert v1.0.0 // indirect
 	github.com/xuri/efp v0.0.0-20210322160811-ab561f5b45e3 // indirect
-	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd // indirect
-	golang.org/x/net v0.0.0-20220526153639-5463443f8c37 // indirect
-	golang.org/x/sys v0.0.0-20220829200755-d48e67d00261 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/crypto v0.5.0 // indirect
+	golang.org/x/net v0.5.0 // indirect
+	golang.org/x/sys v0.4.0 // indirect
+	golang.org/x/text v0.6.0 // indirect
 )
