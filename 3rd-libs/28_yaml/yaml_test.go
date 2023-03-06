@@ -1,7 +1,6 @@
 package yaml_test
 
 import (
-	"strconv"
 	"testing"
 	"time"
 
@@ -16,7 +15,7 @@ list_str:
   - a
   - "text"
   - 123
-# timeout: 4m  # 4 minutes
+timeout: 4m  # 4 minutes
 map_data: 
   2:
     title: 拾光-接单通知
@@ -28,8 +27,11 @@ map_data:
 # TV 合作渠道免广
 tv_channel:
   16252: # 长虹电视
-    ad_types: []     # TL TV前贴 TH TV后贴
+    ad_types: ["TV", "TL"]     # TL TV前贴 TH TV后贴
     threshold: 3m30s   # 3 minutess
+# 频道页对应的焦点图偏移 (精选第 3 帧)
+page_id_offset: # 频道页对应的焦点图偏移 (精选第 3 帧)
+  "100101": 2
 `
 
 type YamlConfig struct {
@@ -43,6 +45,8 @@ type YamlConfig struct {
 	MapData map[int32]*Template `yaml:"map_data"`
 	// Map duration
 	MapDuration map[int]TVManufacture `yaml:"tv_channel"`
+	// 频道页对应的焦点图偏移 (精选第 3 帧)
+	PageIDOffset map[string]int32 `yaml:"page_id_offset"`
 }
 
 // TVManufacture 合作厂商
@@ -81,11 +85,5 @@ func TestYaml(t *testing.T) {
 	assert.Equal(t, 3*time.Minute+30*time.Second, val.Threshold)
 	// assert.True(t, val.freeAd(3*time.Minute))
 	// assert.False(t, val.freeAd(4*time.Minute))
-}
-
-func TestAtoi(t *testing.T) {
-	_, err := strconv.Atoi("")
-	t.Log(err)
-
-	assert.NotNil(t, err)
+	assert.Equal(t, int32(2), cfg.PageIDOffset["100101"])
 }
