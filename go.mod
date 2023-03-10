@@ -24,6 +24,7 @@ require (
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mailru/easyjson v0.7.6
 	github.com/nats-io/nats.go v1.22.1
+	github.com/otiai10/gosseract/v2 v2.4.0
 	github.com/panjf2000/ants/v2 v2.4.5
 	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
