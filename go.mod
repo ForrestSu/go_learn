@@ -7,6 +7,7 @@ require (
 	github.com/ArthurHlt/go-eureka-client v1.1.0
 	github.com/agiledragon/gomonkey/v2 v2.1.0
 	github.com/bilibili/gengine v1.5.7
+	github.com/bits-and-blooms/bloom/v3 v3.3.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/fatih/color v1.13.0
 	github.com/fsnotify/fsnotify v1.5.1
@@ -50,6 +51,7 @@ require (
 
 require (
 	github.com/antlr/antlr4 v0.0.0-20210105192202-5c2b686f95e1 // indirect
+	github.com/bits-and-blooms/bitset v1.3.1 // indirect
 	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b // indirect
 	github.com/cockroachdb/errors v1.9.0 // indirect
 	github.com/cockroachdb/logtags v0.0.0-20211118104740-dabe8e521a4f // indirect
