@@ -8,6 +8,7 @@ require (
 	github.com/agiledragon/gomonkey/v2 v2.1.0
 	github.com/bilibili/gengine v1.5.7
 	github.com/bits-and-blooms/bloom/v3 v3.3.1
+	github.com/distatus/battery v0.10.0
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/fatih/color v1.13.0
 	github.com/fsnotify/fsnotify v1.5.1
@@ -95,4 +96,5 @@ require (
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/text v0.7.0 // indirect
+	howett.net/plist v0.0.0-20181124034731-591f970eefbb // indirect
 )
