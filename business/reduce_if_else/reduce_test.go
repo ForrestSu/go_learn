@@ -40,7 +40,7 @@ func TestRule(t *testing.T) {
 	_ = evaluate.Evaluate(req, rsp)
 }
 
-//go:generate go test -bench=. -cpuprofile=cpu.prof
+//go:generate go test -bench=. -benchmem -cpuprofile=cpu.prof
 
 // BenchmarkEvaluate
 // BenchmarkEvaluate-12    	100000000	        11.95 ns/op

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/ForrestSu/go_learn/utils"
 	"github.com/distatus/battery"
 )
 
@@ -13,7 +14,8 @@ func main() {
 		return
 	}
 	for _, b := range batteries {
-		fmt.Printf("Battery: MaxCapcity %.f, %0.2f%%\n", b.Full/b.Voltage, b.Full/b.Design*100)
+		health := fmt.Sprintf("%0.2f%%", b.Full/b.Design*100)
+		fmt.Printf("Battery: MaxCapcity %.f, health: %s\n", b.Full/b.Voltage, utils.TitlePt.Sprint(health))
 		// fmt.Printf("%.f, %.f", b.Full/b.Voltage, b.Design/b.Voltage)
 	}
 }
