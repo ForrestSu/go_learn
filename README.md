@@ -2,6 +2,18 @@
 
 学习golang，编写的一些例子
 
+
+## tools 小工具
+
+- 1 HKD 汇率
+> go install  github.com/ForrestSu/go_learn/tools/hkd_rate@master
+
+- 2 图片文字识别
+> go install  github.com/ForrestSu/go_learn/tools/ocr@master
+
+- 3 🔋电池健康百分比
+> go install  github.com/ForrestSu/go_learn/tools/battery@master
+
 ## go module 说明
 go.mod 文件在树的根目录中，
 有四种指令：`module`，`require`，`replace`，`exclude`。

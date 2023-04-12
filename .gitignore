@@ -9,7 +9,7 @@
 
 3rd-libs/26_wechat/official_account/app_secret.txt
 3rd-libs/26_wechat/mini_program/app_secret.txt
-3rd-libs/ocr/ocr
-tools/tools
 /hello_world/ch24_http/ch24_http
-/hello_world/ch25_battery_percent/battery
+/tools/battery/battery
+/tools/ocr/ocr
+/tools/hkd_rate/hkd_rate
