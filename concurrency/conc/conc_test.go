@@ -1,4 +1,4 @@
-package conc
+package main
 
 import (
 	"fmt"

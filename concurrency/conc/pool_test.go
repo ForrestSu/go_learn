@@ -1,4 +1,4 @@
-package conc
+package main
 
 import (
 	"sort"
@@ -9,8 +9,6 @@ import (
 )
 
 func TestPool(t *testing.T) {
-	// process
-	// iter.ForEach(nil, handle)
 	t.Run("test", func(t *testing.T) {
 		g := pool.NewWithResults[int]()
 		expected := []int{}
@@ -27,16 +25,3 @@ func TestPool(t *testing.T) {
 	})
 
 }
-
-func process(stream chan int) {
-	p := pool.New().WithMaxGoroutines(10)
-	for elem := range stream {
-		elem := elem
-		p.Go(func() {
-			handle(elem)
-		})
-	}
-	p.Wait()
-}
-
-func handle(v int) {}
