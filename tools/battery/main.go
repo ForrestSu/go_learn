@@ -15,7 +15,14 @@ func main() {
 	}
 	for _, b := range batteries {
 		health := fmt.Sprintf("%0.2f%%", b.Full/b.Design*100)
-		fmt.Printf("Battery: MaxCapcity %.f, health: %s\n", b.Full/b.Voltage, utils.TitlePt.Sprint(health))
-		// fmt.Printf("%.f, %.f", b.Full/b.Voltage, b.Design/b.Voltage)
+		fmt.Printf("<Battery> MaxCapcity %.f, "+
+			"State: %s, "+
+			// "CycleCount: %s, "+
+			"health: %s\n",
+			b.Full/b.Voltage,
+			b.State,
+			// utils.TitlePt.Sprint(b.CycleCount),
+			utils.TitlePt.Sprint(health),
+		)
 	}
 }
