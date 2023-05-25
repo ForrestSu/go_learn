@@ -34,19 +34,34 @@ func (r *FxReply) String() string {
 		replacer.Replace(d.Name), utils.TitlePt.Sprint(d.MidPx), d.Time, d.Date)
 }
 
-func (r *FxReply) HKDRate() float64 {
+// HkdMidPrice 港币汇率-中间价
+func (r *FxReply) HkdMidPrice() float64 {
 	rate, _ := strconv.ParseFloat(r.Data[0].MidPx, 10)
-	return rate / 100
+	return rate
 }
 
 func main() {
 	var url string
 	flag.StringVar(&url, "url", "http://m.cmbchina.com/api/rate/getfxratedetail/?name=港币", "url")
-	var hkd, cny float64
+	var hkd, cny, rate float64
 	flag.Float64Var(&hkd, "hkd", 0, "输入HKD")
 	flag.Float64Var(&cny, "cny", 0, "输入CNY")
+	flag.Float64Var(&rate, "r", 0, "指定汇率（默认: 实时招行中间价）")
 	flag.Parse()
 
+	if rate == 0 {
+		rate = getMidPriceHKD(url)
+	}
+	rate = rate / 100.0
+	if hkd > 0 {
+		fmt.Printf("%v HKD => %.3f CNY\n", hkd, hkd*rate)
+	}
+	if cny > 0 {
+		fmt.Printf("%v CNY => %.3f HKD\n", cny, cny/rate)
+	}
+}
+
+func getMidPriceHKD(url string) float64 {
 	rsp, err := utils.HTTPGet(url)
 	if err != nil {
 		log.Fatal(err)
@@ -56,10 +71,5 @@ func main() {
 		log.Fatalf("unmarshal err:%v", err)
 	}
 	fmt.Println(reply.String())
-	if hkd > 0 {
-		fmt.Printf("%v HKD => %.3f CNY\n", hkd, hkd*reply.HKDRate())
-	}
-	if cny > 0 {
-		fmt.Printf("%v CNY => %.3f HKD\n", cny, cny/reply.HKDRate())
-	}
+	return reply.HkdMidPrice()
 }
