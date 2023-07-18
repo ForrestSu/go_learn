@@ -6,13 +6,10 @@
 ## tools 小工具
 
 - 1 HKD 汇率
-> go install  github.com/ForrestSu/go_learn/tools/hkd@master
+> go install github.com/ForrestSu/go_learn/tools/hkd@latest
 
-- 2 图片文字识别
-> go install  github.com/ForrestSu/go_learn/tools/ocr@master
-
-- 3 🔋电池健康百分比
-> go install  github.com/ForrestSu/go_learn/tools/battery@master
+- 2 🔋电池健康百分比 (MacOS)
+> go install github.com/ForrestSu/go_learn/tools/battery@latest
 
 ## go module 说明
 go.mod 文件在树的根目录中，

@@ -4,25 +4,25 @@ import (
 	"fmt"
 
 	"github.com/ForrestSu/go_learn/utils"
-	"github.com/distatus/battery"
 )
 
 func main() {
-	batteries, err := battery.GetAll()
+	// GetAll() copy from github.com/distatus/battery v0.11.0
+	batteries, err := GetAll()
 	if err != nil {
 		fmt.Println("Failed to get battery info:", err)
 		return
 	}
-	for _, b := range batteries {
-		health := fmt.Sprintf("%0.2f%%", b.Full/b.Design*100)
-		fmt.Printf("<Battery> MaxCapcity %.f, "+
+	for i, b := range batteries {
+		health := fmt.Sprintf("%.2f%%", 100*float64(b.MaxCapacity)/float64(b.DesignCapacity))
+		fmt.Printf("<%d>: MaxCapcity %d (desgin: %d), "+
 			"State: %s, "+
-			// "CycleCount: %s, "+
+			"CycleCount: %s, "+
 			"health: %s\n",
-			b.Full/b.Voltage,
-			b.State,
-			// utils.TitlePt.Sprint(b.CycleCount),
-			utils.TitlePt.Sprint(health),
+			i, b.MaxCapacity, b.DesignCapacity,
+			utils.TitlePt.Sprint(b.State),
+			utils.TitlePt.Sprint(b.CycleCount),
+			utils.InfoPt.Sprint(health),
 		)
 	}
 }
