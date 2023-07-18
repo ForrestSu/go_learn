@@ -6,7 +6,7 @@ import (
 	"github.com/skip2/go-qrcode"
 )
 
-/**
+/*
 qrcode.WriteFile()
 1 content: 表示要生成二维码的内容，可以是任意字符串。
 2 level: 表示二维码的容错级别，取值有Low、Medium、High、Highest。

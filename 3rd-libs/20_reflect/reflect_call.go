@@ -30,7 +30,7 @@ func WrapperInvoke(target reflect.Type, methodName string, innerFunc interface{}
 	return wrapper.Interface()
 }
 
-func main() {
+func mai1n() {
 
 	var mockFunc = func(ctx context.Context, req interface{}, rsp interface{}, _ []int) error {
 		fmt.Printf("monkey patch ok...\n")

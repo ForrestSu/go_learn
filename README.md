@@ -6,7 +6,7 @@
 ## tools 小工具
 
 - 1 HKD 汇率
-> go install  github.com/ForrestSu/go_learn/tools/hkd_rate@master
+> go install  github.com/ForrestSu/go_learn/tools/hkd@master
 
 - 2 图片文字识别
 > go install  github.com/ForrestSu/go_learn/tools/ocr@master
