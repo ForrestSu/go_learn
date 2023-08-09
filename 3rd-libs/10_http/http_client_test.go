@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-//HTTPPost post 请求
+// HTTPPost post 请求
 func HTTPPost(uri string, data string) ([]byte, error) {
 	body := bytes.NewBuffer([]byte(data))
 	response, err := http.Post(uri, "", body)
