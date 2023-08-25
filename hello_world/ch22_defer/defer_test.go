@@ -5,39 +5,16 @@ import (
 	"testing"
 )
 
-func handler() error {
-	return fmt.Errorf("handler err is abandon")
-}
-
-func Filter() (err error) {
-	var verifyErr error
+// 4, 3, 2, 1
+func TestDefer(t *testing.T) {
 	defer func() {
-		err = verifyErr
-		fmt.Printf("err = %+v, verifyErr = %+v \n", err, verifyErr)
+		fmt.Println("1")
 	}()
-
-	verifyErr = nil
-	return handler()
-}
-
-func TestHello(t *testing.T) {
-	// err := Filter()
-	// assert.Nil(t, err) // need err
-	hello(2)
-}
-
-func hello(k int) {
-	if k == 0 {
-		fmt.Println("k is 0")
-		return
-	}
 	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("recover")
-		}
-		fmt.Printf("defer \n")
+		fmt.Println("2")
 	}()
-	go func() {
-		panic("panic")
+	defer func() {
+		fmt.Println("3")
 	}()
+	fmt.Println("4")
 }
