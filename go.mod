@@ -22,6 +22,7 @@ require (
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kr/pretty v0.3.0
 	github.com/kylelemons/godebug v1.1.0
+	github.com/loov/hrtime v1.0.3
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mailru/easyjson v0.7.6
 	github.com/nats-io/nats.go v1.22.1
@@ -39,6 +40,7 @@ require (
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.5.0
 	go.opencensus.io v0.23.0
+	go.uber.org/ratelimit v0.3.0
 	golang.org/x/sync v0.0.0-20220513210516-0976fa681c29
 	golang.org/x/time v0.3.0
 	google.golang.org/protobuf v1.28.0
@@ -52,6 +54,7 @@ require (
 
 require (
 	github.com/antlr/antlr4 v0.0.0-20210105192202-5c2b686f95e1 // indirect
+	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/bits-and-blooms/bitset v1.3.1 // indirect
 	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect

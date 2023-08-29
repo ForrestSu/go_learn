@@ -11,8 +11,8 @@ import (
 )
 
 func main() {
-	// testWait() // blocking
-	testReserve()
+	testWait() // blocking
+	// testReserve()
 	// testAllow() // non-blocking
 }
 
