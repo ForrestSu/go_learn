@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	pool, err := ants.NewPoolWithFunc(1000, func(v interface{}) {
-		if fn, ok := v.(func()); ok {
+	pool, err := ants.NewPoolWithFunc(1000, func(arg interface{}) {
+		if fn, ok := arg.(func()); ok {
 			fn()
 		}
 	})

@@ -27,7 +27,7 @@ require (
 	github.com/mailru/easyjson v0.7.6
 	github.com/nats-io/nats.go v1.22.1
 	github.com/otiai10/gosseract/v2 v2.4.0
-	github.com/panjf2000/ants/v2 v2.4.5
+	github.com/panjf2000/ants/v2 v2.8.1
 	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
 	github.com/silenceper/wechat/v2 v2.0.9-rc.1.0.20210908030323-96c1f98944e4
@@ -38,10 +38,10 @@ require (
 	github.com/stretchr/testify v1.8.1
 	github.com/szyhf/go-excel v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
-	github.com/xuri/excelize/v2 v2.5.0
+	github.com/xuri/excelize/v2 v2.8.0
 	go.opencensus.io v0.23.0
 	go.uber.org/ratelimit v0.3.0
-	golang.org/x/sync v0.0.0-20220513210516-0976fa681c29
+	golang.org/x/sync v0.1.0
 	golang.org/x/time v0.3.0
 	google.golang.org/protobuf v1.28.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
@@ -80,19 +80,20 @@ require (
 	github.com/nats-io/nkeys v0.3.0 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/richardlehane/mscfb v1.0.3 // indirect
-	github.com/richardlehane/msoleps v1.0.1 // indirect
+	github.com/richardlehane/mscfb v1.0.4 // indirect
+	github.com/richardlehane/msoleps v1.0.3 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
 	github.com/spf13/cast v1.3.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/szyhf/go-convert v1.0.0 // indirect
-	github.com/xuri/efp v0.0.0-20210322160811-ab561f5b45e3 // indirect
+	github.com/xuri/efp v0.0.0-20230802181842-ad255f2331ca // indirect
+	github.com/xuri/nfp v0.0.0-20230819163627-dc951e3ffe1a // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
-	golang.org/x/crypto v0.5.0 // indirect
-	golang.org/x/net v0.7.0 // indirect
-	golang.org/x/sys v0.9.0 // indirect
-	golang.org/x/text v0.7.0 // indirect
+	golang.org/x/crypto v0.12.0 // indirect
+	golang.org/x/net v0.14.0 // indirect
+	golang.org/x/sys v0.11.0 // indirect
+	golang.org/x/text v0.12.0 // indirect
 )

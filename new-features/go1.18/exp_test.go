@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/scylladb/go-set/strset"
 	"testing"
 
+	"github.com/scylladb/go-set/strset"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/exp/slices"
 )
