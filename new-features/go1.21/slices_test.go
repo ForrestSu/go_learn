@@ -32,6 +32,4 @@ func TestSlices(t *testing.T) {
 		return 0
 	})
 	t.Logf("%v", pretty.Sprint(students))
-
-	slices.
 }

@@ -6,7 +6,6 @@ import (
 	"log/slog"
 	"net"
 	"os"
-	"slices"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -29,7 +28,6 @@ func TestMaxMin(t *testing.T) {
 	assert.Equal(t, "a", min("a", "b"))
 	p := types.NewPackage("github.com/stretchr/testify", "assert")
 	t.Logf(p.GoVersion())
-	slices.IndexFunc()
 }
 
 // GOEXPERIMENT=loopvar go test -v -run=TestForVar
