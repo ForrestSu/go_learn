@@ -41,6 +41,7 @@ require (
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.8.0
 	go.opencensus.io v0.23.0
+	go.uber.org/automaxprocs v1.5.1
 	go.uber.org/ratelimit v0.3.0
 	golang.org/x/sync v0.1.0
 	golang.org/x/time v0.3.0

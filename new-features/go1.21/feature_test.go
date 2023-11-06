@@ -6,6 +6,7 @@ import (
 	"log/slog"
 	"net"
 	"os"
+	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -45,4 +46,16 @@ func TestSLog(t *testing.T) {
 	slog.Error("ops", net.ErrClosed, "status", 500)
 	slog.LogAttrs(context.Background(), slog.LevelError, "oops",
 		slog.Int("status", 500), slog.Any("err", net.ErrClosed))
+}
+
+func TestAddressAble(t *testing.T) {
+	var answerIDs []int64
+	scan(&answerIDs)
+}
+
+func scan(dest interface{}) {
+	reflectValue := reflect.ValueOf(dest)
+	if reflectValue.Kind() == reflect.Slice {
+		reflectValue.Set(reflect.MakeSlice(reflectValue.Type(), 0, 20))
+	}
 }
