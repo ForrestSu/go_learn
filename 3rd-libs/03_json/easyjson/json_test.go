@@ -6,6 +6,9 @@ import (
 	"testing"
 )
 
+// 安装 easyjson； 用法：easyjson -all <file>.go
+//go:generate go install  github.com/mailru/easyjson/easyjson
+
 var jsonStr = `{
 	"basic":{
 	  	"name":"Mike",
@@ -33,10 +36,10 @@ func TestEasyJSON(t *testing.T) {
 // benchmark
 
 func BenchmarkEmbeddedJson(b *testing.B) {
-	//b.ResetTimer()
+	// b.ResetTimer()
 	b.StartTimer()
 	e := new(Employee)
-	//b.Log(b.N)
+	// b.Log(b.N)
 	for i := 0; i < b.N; i++ {
 
 		err := json.Unmarshal([]byte(jsonStr), e)
