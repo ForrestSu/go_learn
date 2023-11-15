@@ -1,0 +1,20 @@
+{
+  "returnCode": "SUC0000",
+  "errorMsg": null,
+  "body": {
+    "data": [
+      {
+        "ccyNbr": "港币",
+        "rtbBid": "92.87",
+        "rthOfr": "93.06",
+        "rtcOfr": "93.06",
+        "rthBid": "92.68",
+        "rtcBid": "92.03",
+        "ratTim": "11:18:43",
+        "ratDat": "2023年11月15日",
+        "ccyExc": "10"
+      }
+    ],
+    "time": "2023-11-15 11:18"
+  }
+}
