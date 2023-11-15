@@ -10,7 +10,7 @@ require (
 	github.com/bits-and-blooms/bloom/v3 v3.3.1
 	github.com/deckarep/golang-set/v2 v2.3.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
-	github.com/fatih/color v1.13.0
+	github.com/fatih/color v1.16.0
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
@@ -21,12 +21,12 @@ require (
 	github.com/google/wire v0.4.0
 	github.com/json-iterator/go v1.1.12
 	github.com/julienschmidt/httprouter v1.3.0
-	github.com/kr/pretty v0.3.0
+	github.com/kr/pretty v0.3.1
 	github.com/kylelemons/godebug v1.1.0
 	github.com/loov/hrtime v1.0.3
 	github.com/lucasb-eyer/go-colorful v1.2.0
-	github.com/mailru/easyjson v0.7.6
-	github.com/nats-io/nats.go v1.22.1
+	github.com/mailru/easyjson v0.7.7
+	github.com/nats-io/nats.go v1.28.0
 	github.com/otiai10/gosseract/v2 v2.4.0
 	github.com/panjf2000/ants/v2 v2.8.1
 	github.com/satori/go.uuid v1.2.0
@@ -41,7 +41,7 @@ require (
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.8.0
 	go.opencensus.io v0.23.0
-	go.uber.org/automaxprocs v1.5.1
+	go.uber.org/automaxprocs v1.5.3
 	go.uber.org/ratelimit v0.3.0
 	golang.org/x/sync v0.1.0
 	golang.org/x/time v0.3.0
@@ -71,15 +71,16 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
+	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.16 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-sqlite3 v1.14.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
-	github.com/nats-io/nats-server/v2 v2.9.11 // indirect
-	github.com/nats-io/nkeys v0.3.0 // indirect
+	github.com/nats-io/nats-server/v2 v2.9.23 // indirect
+	github.com/nats-io/nkeys v0.4.6 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/richardlehane/mscfb v1.0.4 // indirect
@@ -94,8 +95,8 @@ require (
 	github.com/xuri/nfp v0.0.0-20230819163627-dc951e3ffe1a // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
-	golang.org/x/crypto v0.12.0 // indirect
-	golang.org/x/net v0.14.0 // indirect
-	golang.org/x/sys v0.11.0 // indirect
-	golang.org/x/text v0.12.0 // indirect
+	golang.org/x/crypto v0.14.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/sys v0.14.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 )

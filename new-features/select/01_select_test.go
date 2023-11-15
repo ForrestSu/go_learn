@@ -34,13 +34,13 @@ func TestChannelSelect(t *testing.T) {
 
 // 采用 select 实现超时
 func TestSelectTimeOut(t *testing.T) {
-	ch01 := make(chan int)
-	go func(ch01 chan int) {
+	msgCh := make(chan int)
+	go func() {
 		fmt.Println("enter co-routine...")
 		isRun := true
 		for isRun {
 			select {
-			case rc1, ok := <-ch01:
+			case rc1, ok := <-msgCh:
 				fmt.Println("rc1", rc1)
 				if ok == false {
 					isRun = false
@@ -51,9 +51,9 @@ func TestSelectTimeOut(t *testing.T) {
 			}
 		}
 		fmt.Println("exit co-routine...")
-	}(ch01)
+	}()
 	time.Sleep(time.Second * 2)
 	// 2秒之后发送一个消息
-	ch01 <- 10
-	close(ch01)
+	msgCh <- 10
+	close(msgCh)
 }
