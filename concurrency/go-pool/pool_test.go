@@ -1,8 +1,11 @@
-package main
+package gpool
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func TestPool(t *testing.T) {
 	p := NewPoolWithSize(10)
 	p.Start()
 	for i := 0; i < 3; i++ {

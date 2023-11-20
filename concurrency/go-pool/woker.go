@@ -1,4 +1,4 @@
-package main
+package gpool
 
 // Job 任务
 type Job func(id int)
