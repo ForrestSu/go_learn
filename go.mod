@@ -11,7 +11,7 @@ require (
 	github.com/deckarep/golang-set/v2 v2.3.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/fatih/color v1.16.0
-	github.com/fsnotify/fsnotify v1.5.1
+	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gocarina/gocsv v0.0.0-20210516172204-ca9e8a8ddea8
 	github.com/golang/mock v1.4.4
@@ -51,7 +51,7 @@ require (
 	gorm.io/driver/mysql v1.3.4
 	gorm.io/driver/sqlite v1.3.2
 	gorm.io/gorm v1.23.4
-	howett.net/plist v1.0.0
+	howett.net/plist v1.0.1
 )
 
 require (
