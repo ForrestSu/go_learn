@@ -8,6 +8,7 @@ require (
 	github.com/agiledragon/gomonkey/v2 v2.1.0
 	github.com/bilibili/gengine v1.5.7
 	github.com/bits-and-blooms/bloom/v3 v3.3.1
+	github.com/caiguanhao/readqr v1.0.0
 	github.com/deckarep/golang-set/v2 v2.3.1
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
 	github.com/fatih/color v1.16.0
@@ -99,4 +100,5 @@ require (
 	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
 )

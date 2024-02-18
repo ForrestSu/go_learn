@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os"
 
+	"github.com/caiguanhao/readqr"
 	"github.com/skip2/go-qrcode"
 )
 
@@ -19,4 +21,18 @@ func main() {
 	if err != nil {
 		fmt.Println("fail to generate qrcode:", err)
 	}
+	decodeQrCode("./1.png")
+}
+
+func decodeQrCode(path string) {
+	f, err := os.Open(path)
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	result, err := readqr.Decode(f)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(result)
 }
