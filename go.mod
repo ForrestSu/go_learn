@@ -30,6 +30,7 @@ require (
 	github.com/nats-io/nats.go v1.28.0
 	github.com/otiai10/gosseract/v2 v2.4.0
 	github.com/panjf2000/ants/v2 v2.8.1
+	github.com/samber/lo v1.39.0
 	github.com/satori/go.uuid v1.2.0
 	github.com/scylladb/go-set v1.0.2
 	github.com/silenceper/wechat/v2 v2.0.9-rc.1.0.20210908030323-96c1f98944e4
@@ -87,7 +88,6 @@ require (
 	github.com/richardlehane/mscfb v1.0.4 // indirect
 	github.com/richardlehane/msoleps v1.0.3 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
-	github.com/samber/lo v1.39.0 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
 	github.com/spf13/cast v1.3.1 // indirect
