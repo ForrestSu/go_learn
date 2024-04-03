@@ -4,17 +4,17 @@ import "testing"
 
 func BenchmarkInterface(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		//Invoke(doWork)
-		//doWork()
+		// Invoke(doWork)
+		// doWork()
 		compare()
 	}
 }
 
-//func BenchmarkPlain(b *testing.B) {
+// func BenchmarkPlain(b *testing.B) {
 //	for i := 0; i < b.N; i++ {
 //		doWork()
 //	}
-//}
+// }
 
 func doWork() {
 	for i := 0; i < 1; i++ {

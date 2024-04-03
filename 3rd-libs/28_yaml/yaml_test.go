@@ -16,6 +16,7 @@ list_str:
   - "text"
   - 123
 timeout: 4m  # 4 minutes
+set_name: ad.sz.* 
 map_data: 
   2:
     title: 拾光-接单通知
@@ -41,6 +42,8 @@ type YamlConfig struct {
 	ListStr []string `yaml:"list_str"`
 	// duration
 	Timeout time.Duration `yaml:"timeout"`
+	// 字符串
+	SetName string `yaml:"set_name"`
 	// Map
 	MapData map[int32]*Template `yaml:"map_data"`
 	// Map duration
@@ -74,9 +77,10 @@ type Template struct {
 
 func TestYaml(t *testing.T) {
 	var cfg = &YamlConfig{}
-	cfg.Timeout = 5 * time.Nanosecond
+	cfg.Timeout = 5 * time.Minute
 	err := yaml.Unmarshal([]byte(configInfo), cfg)
 	assert.Nil(t, err)
+	assert.Equal(t, "ad.sz.*", cfg.SetName)
 
 	t.Log(pretty.Sprint(cfg))
 	assert.Equal(t, 4*time.Minute, cfg.Timeout)
