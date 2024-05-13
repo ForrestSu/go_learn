@@ -1,4 +1,4 @@
-package _2_lodash
+package _2_lo
 
 import (
 	"testing"

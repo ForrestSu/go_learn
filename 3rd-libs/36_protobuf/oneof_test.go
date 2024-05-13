@@ -1,17 +1,17 @@
-package main
+package oneof
 
 import (
 	"fmt"
-
-	"google.golang.org/protobuf/encoding/protojson"
+	"testing"
 
 	pb "github.com/ForrestSu/go_learn/3rd-libs/36_protobuf/stub/echo"
-
 	jsoniter "github.com/json-iterator/go"
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 //go:generate protoc --go_out=. ./hello.proto
-func main() {
+
+func TestOneOF(t *testing.T) {
 	req := &pb.HelloRequest{
 		Msg:      "hello",
 		OneOfPay: &pb.HelloRequest_Wx{Wx: &pb.WechatPay{Id: 100, Name: "wechat"}},
