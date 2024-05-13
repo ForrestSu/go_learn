@@ -6,7 +6,7 @@
 ## tools 小工具
 
 - 1 HKD 汇率
-> go install github.com/ForrestSu/go_learn/tools/hkd@latest
+> go install github.com/ForrestSu/go_learn/tools/hkd@latest (或者@main)
 
 - 2 🔋电池健康百分比 (MacOS)
 > go install github.com/ForrestSu/go_learn/tools/battery@latest
