@@ -19,6 +19,7 @@ require (
 	github.com/golang/mock v1.4.4
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-cmp v0.5.8
+	github.com/google/gopacket v1.1.19
 	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.4.0
 	github.com/json-iterator/go v1.1.12
