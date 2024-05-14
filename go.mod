@@ -9,8 +9,9 @@ require (
 	github.com/bilibili/gengine v1.5.7
 	github.com/bits-and-blooms/bloom/v3 v3.3.1
 	github.com/caiguanhao/readqr v1.0.0
-	github.com/deckarep/golang-set/v2 v2.3.1
+	github.com/deckarep/golang-set/v2 v2.6.0
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
+	github.com/expr-lang/expr v1.16.7
 	github.com/fatih/color v1.16.0
 	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-sql-driver/mysql v1.6.0
@@ -38,7 +39,7 @@ require (
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/sourcegraph/conc v0.3.0
 	github.com/spf13/cobra v1.4.0
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.9.0
 	github.com/szyhf/go-excel v1.5.1
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.8.0
