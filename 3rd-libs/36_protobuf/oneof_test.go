@@ -26,12 +26,4 @@ func TestOneOF(t *testing.T) {
 
 	val, err := protojson.Marshal(req)
 	fmt.Printf("protojson.Marshal() => %s, err: %v\n", string(val), err)
-	// jsonpb marshal
-	var serial = JSONPBSerialization{}
-	val, err = serial.Marshal(req)
-	if err != nil {
-		panic(err)
-	}
-	// {"msg":"hello","ali":{"id":"100","name":"ali"}}
-	fmt.Printf("jsonpb.Marshal() => %s, err:%v\n", string(val), err)
 }
