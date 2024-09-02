@@ -1,6 +1,7 @@
 package go1_23
 
 import (
+	"iter"
 	"testing"
 	"unique"
 )
@@ -11,4 +12,19 @@ func TestUnique(t *testing.T) {
 		words[i] = unique.Make(word)
 	}
 
+}
+
+func TestPull2ImmediateStop(t *testing.T) {
+	next, stop := iter.Pull2(panicSeq2())
+	stop()
+	// Make sure we don't panic if we try to call next or stop.
+	if _, _, ok := next(); ok {
+		t.Fatal("next returned true after iterator was stopped")
+	}
+}
+
+func panicSeq2() iter.Seq2[int, int] {
+	return func(yield func(int, int) bool) {
+		panic("boom")
+	}
 }

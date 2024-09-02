@@ -1,0 +1,297 @@
+
+{
+    "sta": "00",
+    "message": null,
+    "data": {
+        "totalAcme": "25.01",
+        "result": [
+            {
+                "date": "2024-08-01",
+                "maxTemperature": "33.0",
+                "isShareTime": "0",
+                "minTemperature": "25.5",
+                "averageTemperature": "29.25",
+                "power": "1.26",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-02",
+                "maxTemperature": "33.8",
+                "isShareTime": "0",
+                "minTemperature": "26.9",
+                "averageTemperature": "30.35",
+                "power": "1.28",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-03",
+                "maxTemperature": "35.8",
+                "isShareTime": "0",
+                "minTemperature": "25.8",
+                "averageTemperature": "30.80",
+                "power": "1.25",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-04",
+                "maxTemperature": "37.3",
+                "isShareTime": "0",
+                "minTemperature": "26.0",
+                "averageTemperature": "31.65",
+                "power": "1.26",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-05",
+                "maxTemperature": "37.7",
+                "isShareTime": "0",
+                "minTemperature": "27.0",
+                "averageTemperature": "32.35",
+                "power": "1.29",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-06",
+                "maxTemperature": "37.4",
+                "isShareTime": "0",
+                "minTemperature": "24.3",
+                "averageTemperature": "30.85",
+                "power": "1.31",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-07",
+                "maxTemperature": "36.7",
+                "isShareTime": "0",
+                "minTemperature": "23.6",
+                "averageTemperature": "30.15",
+                "power": "1.27",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-08",
+                "maxTemperature": "37.2",
+                "isShareTime": "0",
+                "minTemperature": "25.3",
+                "averageTemperature": "31.25",
+                "power": "1.28",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-09",
+                "maxTemperature": "36.7",
+                "isShareTime": "0",
+                "minTemperature": "27.6",
+                "averageTemperature": "32.15",
+                "power": "1.28",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-10",
+                "maxTemperature": "37.2",
+                "isShareTime": "0",
+                "minTemperature": "27.5",
+                "averageTemperature": "32.35",
+                "power": "1.3",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-11",
+                "maxTemperature": "33.9",
+                "isShareTime": "0",
+                "minTemperature": "25.9",
+                "averageTemperature": "29.90",
+                "power": "1.28",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-12",
+                "maxTemperature": "35.2",
+                "isShareTime": "0",
+                "minTemperature": "24.0",
+                "averageTemperature": "29.60",
+                "power": "1.29",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-13",
+                "maxTemperature": "33.5",
+                "isShareTime": "0",
+                "minTemperature": "24.8",
+                "averageTemperature": "29.15",
+                "power": "4.57",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-14",
+                "maxTemperature": "34.4",
+                "isShareTime": "0",
+                "minTemperature": "25.8",
+                "averageTemperature": "30.10",
+                "power": "7.73",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-15",
+                "maxTemperature": "31.8",
+                "isShareTime": "0",
+                "minTemperature": "24.9",
+                "averageTemperature": "28.35",
+                "power": "6.91",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-16",
+                "maxTemperature": "32.9",
+                "isShareTime": "0",
+                "minTemperature": "24.7",
+                "averageTemperature": "28.80",
+                "power": "6.72",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-17",
+                "maxTemperature": "28.8",
+                "isShareTime": "0",
+                "minTemperature": "24.4",
+                "averageTemperature": "26.60",
+                "power": "5.68",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-18",
+                "maxTemperature": "32.3",
+                "isShareTime": "0",
+                "minTemperature": "24.5",
+                "averageTemperature": "28.40",
+                "power": "6.42",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-19",
+                "maxTemperature": "33.5",
+                "isShareTime": "0",
+                "minTemperature": "24.6",
+                "averageTemperature": "29.05",
+                "power": "5.8",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-20",
+                "maxTemperature": "32.4",
+                "isShareTime": "0",
+                "minTemperature": "25.1",
+                "averageTemperature": "28.75",
+                "power": "5.86",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-21",
+                "maxTemperature": "28.1",
+                "isShareTime": "0",
+                "minTemperature": "23.9",
+                "averageTemperature": "26.00",
+                "power": "5.16",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-22",
+                "maxTemperature": "32.7",
+                "isShareTime": "0",
+                "minTemperature": "24.2",
+                "averageTemperature": "28.45",
+                "power": "5.74",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-23",
+                "maxTemperature": "32.5",
+                "isShareTime": "0",
+                "minTemperature": "24.1",
+                "averageTemperature": "28.30",
+                "power": "6.21",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-24",
+                "maxTemperature": "34.4",
+                "isShareTime": "0",
+                "minTemperature": "25.0",
+                "averageTemperature": "29.70",
+                "power": "5.68",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-25",
+                "maxTemperature": "34.5",
+                "isShareTime": "0",
+                "minTemperature": "24.9",
+                "averageTemperature": "29.70",
+                "power": "0.19",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-26",
+                "maxTemperature": "35.4",
+                "isShareTime": "0",
+                "minTemperature": "24.3",
+                "averageTemperature": "29.85",
+                "power": "0.15",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-27",
+                "maxTemperature": "36.3",
+                "isShareTime": "0",
+                "minTemperature": "25.1",
+                "averageTemperature": "30.70",
+                "power": "0.1",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-28",
+                "maxTemperature": "36.5",
+                "isShareTime": "0",
+                "minTemperature": "26.3",
+                "averageTemperature": "31.40",
+                "power": "0.15",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-29",
+                "maxTemperature": "33.9",
+                "isShareTime": "0",
+                "minTemperature": "24.6",
+                "averageTemperature": "29.25",
+                "power": "15.47",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-30",
+                "maxTemperature": "35.1",
+                "isShareTime": "0",
+                "minTemperature": "24.7",
+                "averageTemperature": "29.90",
+                "power": "17.95",
+                "isHot": "1"
+            },
+            {
+                "date": "2024-08-31",
+                "maxTemperature": "34.9",
+                "isShareTime": "0",
+                "minTemperature": "25.8",
+                "averageTemperature": "30.35",
+                "power": "14.04",
+                "isHot": "1"
+            }
+        ],
+        "meteringPointId": "300......5",
+        "isShareTime": "0",
+        "totalValleyStage": "33.97",
+        "totalParallelPeriod": "53.02",
+        "totalPeakPeriod": "23.87",
+        "deviceIdentif": "09****8538",
+        "eleCustNumber": "09********7",
+        "totalPower": "135.88"
+    }
+}
