@@ -20,18 +20,18 @@ func TestSerials(t *testing.T) {
 	}
 	data, err := json.Marshal(e)
 	if err != nil {
-		t.Fatal("serial error:", err)
+		panic(err)
 	}
 	t.Logf("len %d, %s", len(data), data)
 
-	//反序列化为对象
+	// 反序列化为对象
 	emp := &Employee{
 		Basic: BasicInfo{},
 		Job:   JobInfo{},
 	}
 	err1 := json.Unmarshal(data, emp)
 	if err1 != nil {
-		t.Fatal("deSerial error:", err)
+		panic(err)
 	}
 	t.Log(emp)
 }

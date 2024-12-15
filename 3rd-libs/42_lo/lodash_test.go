@@ -14,6 +14,7 @@ func TestLO(t *testing.T) {
 	t.Log(arr)
 	// count occurrences of 1
 	assert.Equal(t, 1, lo.Count(arr, 1))
+	lo.Sum()
 }
 
 func Reverse[T any](slice []T) []T {

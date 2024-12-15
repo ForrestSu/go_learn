@@ -21,9 +21,10 @@ func main() {
 	if err != nil {
 		fmt.Println("fail to generate qrcode:", err)
 	}
-	decodeQrCode("./1.png")
+	// decodeQrCode("./1.png")
 }
 
+// 解码二维码
 func decodeQrCode(path string) {
 	f, err := os.Open(path)
 	if err != nil {
