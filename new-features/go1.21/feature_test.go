@@ -43,7 +43,7 @@ func TestForVar(t *testing.T) {
 func TestSLog(t *testing.T) {
 	slog.SetDefault(slog.New(slog.NewTextHandler(os.Stdout, nil)))
 	slog.Info("hello", "name", "Al")
-	slog.Error("ops", net.ErrClosed, "status", 500)
+	slog.Error("ops", "status", 500)
 	slog.LogAttrs(context.Background(), slog.LevelError, "oops",
 		slog.Int("status", 500), slog.Any("err", net.ErrClosed))
 }
