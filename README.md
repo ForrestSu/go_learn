@@ -11,6 +11,9 @@
 - 2 🔋电池健康百分比 (MacOS)
 > go install github.com/ForrestSu/go_learn/tools/battery@latest
 
+- 3 二进制文件-格式分析（比如图片）
+> go install github.com/ForrestSu/go_learn/tools/filetype@latest
+
 ## go module 说明
 go.mod 文件在树的根目录中，
 有四种指令：`module`，`require`，`replace`，`exclude`。
