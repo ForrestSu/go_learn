@@ -30,7 +30,7 @@ require (
 	github.com/loov/hrtime v1.0.3
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mailru/easyjson v0.7.7
-	github.com/nats-io/nats.go v1.28.0
+	github.com/nats-io/nats.go v1.39.1
 	github.com/otiai10/gosseract/v2 v2.4.0
 	github.com/panjf2000/ants/v2 v2.8.1
 	github.com/samber/lo v1.39.0
@@ -46,10 +46,10 @@ require (
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.9.0
 	go.opencensus.io v0.23.0
-	go.uber.org/automaxprocs v1.5.3
+	go.uber.org/automaxprocs v1.6.0
 	go.uber.org/ratelimit v0.3.0
 	golang.org/x/sync v0.11.0
-	golang.org/x/time v0.3.0
+	golang.org/x/time v0.10.0
 	google.golang.org/protobuf v1.34.1
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gopkg.in/yaml.v3 v3.0.1
@@ -77,7 +77,7 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
-	github.com/klauspost/compress v1.16.7 // indirect
+	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -85,8 +85,7 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
-	github.com/nats-io/nats-server/v2 v2.9.23 // indirect
-	github.com/nats-io/nkeys v0.4.6 // indirect
+	github.com/nats-io/nkeys v0.4.10 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/richardlehane/mscfb v1.0.4 // indirect
