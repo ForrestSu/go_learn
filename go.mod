@@ -48,7 +48,7 @@ require (
 	go.opencensus.io v0.23.0
 	go.uber.org/automaxprocs v1.6.0
 	go.uber.org/ratelimit v0.3.0
-	golang.org/x/sync v0.11.0
+	golang.org/x/sync v0.12.0
 	golang.org/x/time v0.10.0
 	google.golang.org/protobuf v1.34.1
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
@@ -100,10 +100,10 @@ require (
 	github.com/xuri/nfp v0.0.0-20240318013403-ab9948c2c4a7 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
-	golang.org/x/crypto v0.35.0 // indirect
+	golang.org/x/crypto v0.36.0 // indirect
 	golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8 // indirect
-	golang.org/x/net v0.36.0 // indirect
-	golang.org/x/sys v0.30.0 // indirect
-	golang.org/x/text v0.22.0 // indirect
+	golang.org/x/net v0.38.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
 )
