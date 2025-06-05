@@ -4,8 +4,12 @@ import (
 	"fmt"
 )
 
+// 养老金计算 z=0.005*(1+x)*y
 func main() {
+	showFormula()
+}
 
+func showFormula() {
 	// z=0.005*(1+x)*y
 	var _ = make([][]float64, 0)
 	for x := 0.6; x < 3.1; x += 0.1 {

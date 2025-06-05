@@ -1,6 +1,6 @@
 module github.com/ForrestSu/go_learn
 
-go 1.24.0
+go 1.23.0
 
 require (
 	bou.ke/monkey v1.0.2
@@ -30,6 +30,7 @@ require (
 	github.com/loov/hrtime v1.0.3
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mailru/easyjson v0.7.7
+	github.com/mitchellh/mapstructure v1.5.0
 	github.com/nats-io/nats.go v1.39.1
 	github.com/otiai10/gosseract/v2 v2.4.0
 	github.com/panjf2000/ants/v2 v2.8.1
@@ -41,8 +42,9 @@ require (
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/sourcegraph/conc v0.3.0
 	github.com/spf13/cobra v1.4.0
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	github.com/szyhf/go-excel v1.5.1
+	github.com/unidoc/unipdf/v4 v4.0.0
 	github.com/virtao/GoEndian v0.0.0-20140331034613-586fa83c856a
 	github.com/xuri/excelize/v2 v2.9.0
 	go.opencensus.io v0.23.0
@@ -66,6 +68,7 @@ require (
 	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.8 // indirect
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/gomodule/redigo v1.8.5 // indirect
@@ -91,19 +94,24 @@ require (
 	github.com/richardlehane/mscfb v1.0.4 // indirect
 	github.com/richardlehane/msoleps v1.0.4 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
-	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
 	github.com/spf13/cast v1.3.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/szyhf/go-convert v1.0.0 // indirect
+	github.com/unidoc/freetype v0.2.3 // indirect
+	github.com/unidoc/pkcs7 v0.2.0 // indirect
+	github.com/unidoc/timestamp v0.0.0-20200412005513-91597fd3793a // indirect
+	github.com/unidoc/unitype v0.5.1 // indirect
 	github.com/xuri/efp v0.0.0-20240408161823-9ad904a10d6d // indirect
 	github.com/xuri/nfp v0.0.0-20240318013403-ab9948c2c4a7 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/crypto v0.36.0 // indirect
 	golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8 // indirect
+	golang.org/x/image v0.24.0 // indirect
 	golang.org/x/net v0.38.0 // indirect
 	golang.org/x/sys v0.31.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
-	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
+	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 )
