@@ -54,7 +54,7 @@ func getMidPrice(url string, currency string) float64 {
 	// 查询指定币种汇率
 	fxRate := reply.Find(currency)
 	if fxRate == nil {
-		log.Println("数据为空")
+		log.Printf("币种未找到！currency=<%s>\n", currency)
 		return 0
 	}
 	return fxRate.MidPrice()

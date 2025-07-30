@@ -27,13 +27,16 @@ func (r *FxReply) Find(name string) *FxRate {
 
 // Print 展示汇率
 func (r *FxReply) Print(currency string) {
-	if currency == "" {
-		fmt.Println("全部汇率:")
-	}
-	for _, v := range r.Body.Data {
-		if currency == "" || v.Name == currency {
-			fmt.Println(v.String())
+	if currency != "" {
+		var got = r.Find(currency)
+		if got != nil {
+			fmt.Println(got.String())
 		}
+		return
+	}
+	fmt.Println("全部汇率:")
+	for _, v := range r.Body.Data {
+		fmt.Println(v.String())
 	}
 }
 
@@ -50,8 +53,15 @@ type FxRate struct {
 
 func (r *FxRate) String() string {
 	return fmt.Sprintf(" %s MidRate: %s 现汇卖出: %s 现汇买入: %s (%s %s)",
-		r.Name, utils.TitlePt.Sprint(r.MidPx),
+		truncChinese(r.Name, 6), utils.TitlePt.Sprint(r.MidPx),
 		utils.InfoPt.Sprint(r.RthOffer), r.RthBid, r.Date, r.Time)
+}
+
+func truncChinese(s string, width int) string {
+	if len(s) >= width {
+		return s[0:width]
+	}
+	return s
 }
 
 // MidPrice 汇率-中间价
