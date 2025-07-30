@@ -1,0 +1,3 @@
+
+Alice=
+&type.googleapis.com/test.echo.AdInfoV2AdV2	new_fieldMsgNewField

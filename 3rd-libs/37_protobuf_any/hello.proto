@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package test.echo;
+import "google/protobuf/any.proto";
+//option go_package="github.com/ForrestSu/go_learn/advance/stub/echo";
+option go_package="stub/echo";
+
+
+message MsgV1 {
+    string name = 1;
+    google.protobuf.Any ad_info = 2;
+}
+
+message MsgV2 {
+    string name = 1;
+    google.protobuf.Any ad_info = 2;
+    string extra = 3;
+}
+
+
+// 新版本
+message AdInfoV2 {
+    int64 id = 1;
+    string title = 2;
+     string new = 3; // V2版本特有字段
+}

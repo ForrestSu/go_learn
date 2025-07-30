@@ -11,17 +11,23 @@ import (
 
 func main() {
 	var link = "https://m.cmbchina.com/api/rate/fx-rate"
-	var name = "港币"
+	var currency string
 	flag.StringVar(&link, "url", link, "url")
+	flag.StringVar(&currency, "currency", "港币", "币种名称: 美元")
+	// 汇率金额换算
 	var hkd, cny, rate float64
 	flag.Float64Var(&hkd, "hkd", 0, "输入HKD")
 	flag.Float64Var(&cny, "cny", 0, "输入CNY")
 	flag.Float64Var(&rate, "r", 0, "指定汇率（默认: 实时招行中间价）")
 	flag.Parse()
-
+	// 如果没有指定汇率，则动态获取
 	if rate == 0 {
-		rate = getMidPrice(link, name)
+		rate = getMidPrice(link, currency)
 	}
+	showOptions(hkd, cny, rate)
+}
+
+func showOptions(hkd float64, cny float64, rate float64) {
 	rate = rate / 100.0
 	if hkd > 0 {
 		fmt.Printf("%v HKD => %.3f CNY\n", hkd, hkd*rate)
@@ -31,7 +37,7 @@ func main() {
 	}
 }
 
-func getMidPrice(url string, name string) float64 {
+func getMidPrice(url string, currency string) float64 {
 	rsp, err := utils.HTTPGet(url)
 	if err != nil {
 		log.Fatal(err)
@@ -40,11 +46,16 @@ func getMidPrice(url string, name string) float64 {
 	if err = json.Unmarshal(rsp, reply); err != nil {
 		log.Fatalf("unmarshal err:%v", err)
 	}
-	fxRate := reply.Find(name)
+	reply.Print(currency)
+	// 查询完成
+	if currency == "" {
+		return 0
+	}
+	// 查询指定币种汇率
+	fxRate := reply.Find(currency)
 	if fxRate == nil {
 		log.Println("数据为空")
 		return 0
 	}
-	fmt.Println(fxRate.String())
 	return fxRate.MidPrice()
 }

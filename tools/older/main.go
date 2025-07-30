@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// 养老金：公式
 func main() {
 
 	// z=0.005*(1+x)*y

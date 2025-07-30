@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strconv"
-	"strings"
 
 	"github.com/ForrestSu/go_learn/utils"
 )
@@ -26,6 +25,18 @@ func (r *FxReply) Find(name string) *FxRate {
 	return nil
 }
 
+// Print 展示汇率
+func (r *FxReply) Print(currency string) {
+	if currency == "" {
+		fmt.Println("全部汇率:")
+	}
+	for _, v := range r.Body.Data {
+		if currency == "" || v.Name == currency {
+			fmt.Println(v.String())
+		}
+	}
+}
+
 type FxRate struct {
 	Name     string `json:"ccyNbr"` // 币种
 	MidPx    string `json:"rtbBid"` // 中间价
@@ -37,12 +48,9 @@ type FxRate struct {
 	Date     string `json:"ratDat"`
 }
 
-// 字符串替换器
-var replacer = strings.NewReplacer("港币", "HKD")
-
 func (r *FxRate) String() string {
 	return fmt.Sprintf(" %s MidRate: %s 现汇卖出: %s 现汇买入: %s (%s %s)",
-		replacer.Replace(r.Name), utils.TitlePt.Sprint(r.MidPx),
+		r.Name, utils.TitlePt.Sprint(r.MidPx),
 		utils.InfoPt.Sprint(r.RthOffer), r.RthBid, r.Date, r.Time)
 }
 
