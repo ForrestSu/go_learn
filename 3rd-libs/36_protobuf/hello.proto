@@ -24,3 +24,8 @@ message HelloRequest {
 message HelloReply {
     string msg = 1;
 }
+
+message TmpMsg {
+    string pre_vid  = 1 [json_name="previd"];
+    string msg_info = 2;
+}
