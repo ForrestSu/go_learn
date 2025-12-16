@@ -1,6 +1,7 @@
 package try
 
 import (
+	"fmt"
 	"maps"
 	"slices"
 	"testing"
@@ -13,4 +14,7 @@ func TestMaps(t *testing.T) {
 	// collect and sort
 	sortedKeys := slices.Sorted(maps.Keys(m))
 	assert.Equal(t, []string{"a", "b", "c"}, sortedKeys)
+	// 格式化输出
+	got := fmt.Sprint(sortedKeys)
+	assert.Equal(t, "[a b c]", got)
 }
