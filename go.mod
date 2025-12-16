@@ -12,12 +12,13 @@ require (
 	github.com/deckarep/golang-set/v2 v2.7.0
 	github.com/eclipse/paho.mqtt.golang v1.4.3
 	github.com/elastic/go-elasticsearch/v7 v7.7.0
-	github.com/expr-lang/expr v1.17.0
+	github.com/expr-lang/expr v1.17.7
 	github.com/fatih/color v1.18.0
 	github.com/fsnotify/fsnotify v1.7.0
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1
 	github.com/golang/mock v1.4.4
+	github.com/golang/protobuf v1.5.0
 	github.com/google/go-cmp v0.6.0
 	github.com/google/gopacket v1.1.19
 	github.com/google/uuid v1.3.0
