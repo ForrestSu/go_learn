@@ -1,6 +1,6 @@
 module github.com/ForrestSu/go_learn
 
-go 1.24.0
+go 1.26.0
 
 require (
 	bou.ke/monkey v1.0.2
@@ -15,6 +15,7 @@ require (
 	github.com/expr-lang/expr v1.17.0
 	github.com/fatih/color v1.18.0
 	github.com/fsnotify/fsnotify v1.7.0
+	github.com/go-faker/faker/v4 v4.11.0
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1
 	github.com/golang/mock v1.4.4
@@ -24,6 +25,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.6.0
 	github.com/h2non/filetype v1.1.3
+	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/golang-lru/v2 v2.0.7
 	github.com/json-iterator/go v1.1.12
 	github.com/julienschmidt/httprouter v1.3.0
@@ -50,7 +52,7 @@ require (
 	go.opencensus.io v0.23.0
 	go.uber.org/automaxprocs v1.6.0
 	go.uber.org/ratelimit v0.3.0
-	golang.org/x/sync v0.18.0
+	golang.org/x/sync v0.22.0
 	golang.org/x/time v0.10.0
 	google.golang.org/protobuf v1.34.1
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
@@ -74,6 +76,7 @@ require (
 	github.com/google/martian v2.1.0+incompatible // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
+	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
@@ -106,6 +109,6 @@ require (
 	golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8 // indirect
 	golang.org/x/net v0.47.0 // indirect
 	golang.org/x/sys v0.38.0 // indirect
-	golang.org/x/text v0.31.0 // indirect
+	golang.org/x/text v0.40.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
 )
